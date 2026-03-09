@@ -340,8 +340,8 @@
         const closeBtn = document.getElementById('persona-popup-close');
         if (!overlay) return;
 
-        // Open on any "Business Leader" bar click
-        document.querySelectorAll('.persona-bar.biz').forEach(bar => {
+        // Open on any "Persona" bar click (temporarily all link to Business Leader)
+        document.querySelectorAll('.persona-bar').forEach(bar => {
             bar.addEventListener('click', () => {
                 overlay.classList.add('active');
                 document.body.style.overflow = 'hidden'; // prevent background scroll

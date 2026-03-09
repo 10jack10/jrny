@@ -7,6 +7,7 @@
     <title>Interactive User Journey</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="okta-journey.css">
+    <link rel="stylesheet" href="onboarding.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -19,604 +20,723 @@
     <div class="floating-orb"></div>
 
     <div class="app-container">
-        <header class="app-header okta-logo-header">
-            <div class="core-logo-block">
-                <div class="core-client-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="30" height="30"
-                        class="client-logo-icon" style="flex-shrink: 0; min-width: 30px; min-height: 30px;">
-                        <defs>
-                            <linearGradient id="logo-hex-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#8884FF" />
-                                <stop offset="100%" stop-color="#4ADE80" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M20 0 L38 10.4 L38 29.6 L20 40 L2 29.6 L2 10.4 Z" fill="url(#logo-hex-grad)"
-                            opacity="0.9" />
-                        <path d="M20 7 L31 13 L31 27 L20 33 L9 27 L9 13 Z" fill="#0A0F1C" />
-                        <circle cx="20" cy="20" r="4.5" fill="#FFFFFF" />
-                    </svg>
-                    <div class="core-client-name">Client X</div>
+        <div id="journey-view" class="view-content active">
+            <header class="app-header okta-logo-header">
+                <div class="core-logo-block">
+                    <div class="core-client-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="30" height="30"
+                            class="client-logo-icon" style="flex-shrink: 0; min-width: 30px; min-height: 30px;">
+                            <defs>
+                                <linearGradient id="logo-hex-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#8884FF" />
+                                    <stop offset="100%" stop-color="#4ADE80" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M20 0 L38 10.4 L38 29.6 L20 40 L2 29.6 L2 10.4 Z" fill="url(#logo-hex-grad)"
+                                opacity="0.9" />
+                            <path d="M20 7 L31 13 L31 27 L20 33 L9 27 L9 13 Z" fill="#0A0F1C" />
+                            <circle cx="20" cy="20" r="4.5" fill="#FFFFFF" />
+                        </svg>
+                        <div class="core-client-name">Client X</div>
+                    </div>
+                    <div class="core-powered-by">Powered by <strong>C.O.R.E.</strong> Customer Observation & Research
+                        Engine
+                    </div>
                 </div>
-                <div class="core-powered-by">Powered by <strong>C.O.R.E.</strong> Customer Observation & Research Engine
+            </header>
+
+            <!-- ═══════════ OKTA JOURNEY MAP ═══════════ -->
+            <div class="okta-journey">
+
+                <!-- Column Headers -->
+                <div class="okta-col-headers">
+                    <div class="okta-col-header-spacer"></div>
+                    <div class="okta-col-header">Pre-Awareness</div>
+                    <div class="okta-col-header">Awareness</div>
+                    <div class="okta-col-header">Evaluation</div>
+                    <div class="okta-col-header">Selection</div>
+                    <div class="okta-col-header">Adoption</div>
+                    <div class="okta-col-header">Renewal</div>
                 </div>
-            </div>
-        </header>
 
-        <!-- ═══════════ OKTA JOURNEY MAP ═══════════ -->
-        <div class="okta-journey">
+                <!-- Main Body -->
+                <div class="okta-body">
 
-            <!-- Column Headers -->
-            <div class="okta-col-headers">
-                <div class="okta-col-header-spacer"></div>
-                <div class="okta-col-header">Pre-Awareness</div>
-                <div class="okta-col-header">Awareness</div>
-                <div class="okta-col-header">Evaluation</div>
-                <div class="okta-col-header">Selection</div>
-                <div class="okta-col-header">Adoption</div>
-                <div class="okta-col-header">Renewal</div>
-            </div>
+                    <div class="okta-content">
 
-            <!-- Main Body -->
-            <div class="okta-body">
-
-                <div class="okta-content">
-
-                    <!-- ═══════════ THINK ═══════════ -->
-                    <div class="okta-row-wrapper">
-                        <div class="okta-row-label think-label">Think</div>
-                        <div class="okta-think">
-                            <div class="think-sub-row">
-                                <div class="think-row-label">Buyer Mindset</div>
-                                <div class="think-cell buyer-mindset"
-                                    data-full-text="I am frustrated with fragmentation, increasing complexity from my remote workforce, and identity-based threats.">
-                                    Frustrated by fragmentation and complexity.</div>
-                                <div class="think-cell buyer-mindset"
-                                    data-full-text="I believe a better identity solution is the key to helping me reduce risk, reduce complexity, and accelerate automation.">
-                                    Seeking better identity solution.</div>
-                                <div class="think-cell buyer-mindset"
-                                    data-full-text="I want to make sure I find the right solution for my specific needs.">
-                                    Finding the right solution.</div>
-                                <div class="think-cell buyer-mindset"
-                                    data-full-text="I want evidence that the identity solution I choose is the right one and will have a positive ROI.">
-                                    Need evidence of positive ROI.</div>
-                                <div class="think-cell buyer-mindset"
-                                    data-full-text="I want to get this new solution up and running as soon &amp; seamlessly as possible to finally resolve this problem.">
-                                    Want fast, seamless implementation.</div>
-                                <div class="think-cell buyer-mindset"
-                                    data-full-text="I wonder if I can get more out of this solution.">Maximizing the
-                                    solution's value.</div>
-                            </div>
-                            <div class="think-sub-row">
-                                <div class="think-row-label">Key Barrier</div>
-                                <div class="think-cell">Hard to align teams on new solutions when proactive. If
-                                    reactive, lack of time for deep research.</div>
-                                <div class="think-cell">Difficult to parse and synthesize the vast amount of information
-                                    across different domains.</div>
-                                <div class="think-cell">Lack of resources to directly compare vendor products and
-                                    pricing for specific use cases.</div>
-                                <div class="think-cell">Hard to gain team alignment without clear understanding of
-                                    impact and implementation details.</div>
-                                <div class="think-cell">Engineers must often learn implementation without trials. No
-                                    single source of truth exists.</div>
-                                <div class="think-cell">Unclear how to measure ROI or understand the true value of
-                                    expanding the current system.</div>
+                        <!-- ═══════════ THINK ═══════════ -->
+                        <div class="okta-row-wrapper">
+                            <div class="okta-row-label think-label">Think</div>
+                            <div class="okta-think">
+                                <div class="think-sub-row">
+                                    <div class="think-row-label">Buyer Mindset</div>
+                                    <div class="think-cell buyer-mindset"
+                                        data-full-text="I am frustrated with fragmentation, increasing complexity from my remote workforce, and identity-based threats.">
+                                        Frustrated by fragmentation and complexity.</div>
+                                    <div class="think-cell buyer-mindset"
+                                        data-full-text="I believe a better identity solution is the key to helping me reduce risk, reduce complexity, and accelerate automation.">
+                                        Seeking better identity solution.</div>
+                                    <div class="think-cell buyer-mindset"
+                                        data-full-text="I want to make sure I find the right solution for my specific needs.">
+                                        Finding the right solution.</div>
+                                    <div class="think-cell buyer-mindset"
+                                        data-full-text="I want evidence that the identity solution I choose is the right one and will have a positive ROI.">
+                                        Need evidence of positive ROI.</div>
+                                    <div class="think-cell buyer-mindset"
+                                        data-full-text="I want to get this new solution up and running as soon &amp; seamlessly as possible to finally resolve this problem.">
+                                        Want fast, seamless implementation.</div>
+                                    <div class="think-cell buyer-mindset"
+                                        data-full-text="I wonder if I can get more out of this solution.">Maximizing the
+                                        solution's value.</div>
+                                </div>
+                                <div class="think-sub-row">
+                                    <div class="think-row-label">Key Barrier</div>
+                                    <div class="think-cell">Hard to align teams on new solutions when proactive. If
+                                        reactive, lack of time for deep research.</div>
+                                    <div class="think-cell">Difficult to parse and synthesize the vast amount of
+                                        information
+                                        across different domains.</div>
+                                    <div class="think-cell">Lack of resources to directly compare vendor products and
+                                        pricing for specific use cases.</div>
+                                    <div class="think-cell">Hard to gain team alignment without clear understanding of
+                                        impact and implementation details.</div>
+                                    <div class="think-cell">Engineers must often learn implementation without trials. No
+                                        single source of truth exists.</div>
+                                    <div class="think-cell">Unclear how to measure ROI or understand the true value of
+                                        expanding the current system.</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- ═══════════ DO ═══════════ -->
-                    <div class="okta-row-wrapper">
-                        <div class="okta-row-label do-label">Do</div>
-                        <div class="okta-do">
+                        <!-- ═══════════ DO ═══════════ -->
+                        <div class="okta-row-wrapper">
+                            <div class="okta-row-label do-label">Do</div>
+                            <div class="okta-do">
 
-                            <!-- Row 1: Behavior / Flowchart -->
-                            <div class="do-sub-label">Behavior</div>
-                            <div class="do-main-area" id="flowchart-area">
+                                <!-- Row 1: Behavior / Flowchart -->
+                                <div class="do-sub-label">Behavior</div>
+                                <div class="do-main-area" id="flowchart-area">
 
-                                <!-- Fingerprint legend (Removed context) -->
-                                <div class="fp-legend" style="display: none;"></div>
+                                    <!-- Fingerprint legend (Removed context) -->
+                                    <div class="fp-legend" style="display: none;"></div>
 
-                                <!-- SVG overlay for connector lines -->
-                                <svg id="flowchart-svg" class="flowchart-svg"></svg>
+                                    <!-- SVG overlay for connector lines -->
+                                    <svg id="flowchart-svg" class="flowchart-svg"></svg>
 
-                                <!-- Flowchart nodes — 3 lane grid layout -->
-                                <div class="do-flowchart" id="do-flowchart">
+                                    <!-- Flowchart nodes — 3 lane grid layout -->
+                                    <div class="do-flowchart" id="do-flowchart">
+                                        <!-- PRE-AWARENESS -->
+                                        <div class="flow-col">
+                                            <div class="lane upper-lane">
+                                                <div class="journey-node start-node" id="node-A1">No Existing Solution
+                                                </div>
+                                                <div class="journey-node" id="node-B1">Reactive &amp; Bottom-Up</div>
+                                            </div>
+                                            <div class="lane middle-lane">
+                                                <div></div>
+                                                <div class="journey-node" id="node-B2">Proactive &amp; Top-Down</div>
+                                            </div>
+                                            <div class="lane bottom-lane">
+                                                <div class="journey-node start-node" id="node-A2">Existing Solution
+                                                </div>
+                                                <div class="journey-node" id="node-B3">Reactive &amp; Top-Down</div>
+                                            </div>
+                                        </div>
+                                        <!-- AWARENESS -->
+                                        <div class="flow-col">
+                                            <div class="lane upper-lane"></div>
+                                            <div class="lane middle-lane">
+                                                <div class="journey-node" id="node-C1">Align on Solution Need</div>
+                                                <div class="journey-node" id="node-C2">Find Vendors</div>
+                                            </div>
+                                            <div class="lane bottom-lane">
+                                                <div></div>
+                                                <div class="journey-node" id="node-C3">Peer recommendations</div>
+                                            </div>
+                                        </div>
+                                        <!-- EVALUATION -->
+                                        <div class="flow-col">
+                                            <div class="lane upper-lane"></div>
+                                            <div class="lane middle-lane">
+                                                <div class="journey-node" id="node-D2">Evaluate Business Value</div>
+                                                <div class="journey-node" id="node-D4">Narrow the Shortlist</div>
+                                            </div>
+                                            <div class="lane bottom-lane">
+                                                <div class="journey-node" id="node-D5"
+                                                    style="grid-column: span 2; margin: 0 auto; cursor: pointer;"
+                                                    data-embed="https://docs.google.com/presentation/d/1t5lwo-0Ch_v028Tw0usvRzQrcCLfJqYzUId3uogsUXQ/embed?rm=minimal">
+                                                    Contact Us</div>
+                                            </div>
+                                        </div>
+                                        <!-- SELECTION -->
+                                        <div class="flow-col">
+                                            <div class="lane upper-lane">
+                                                <div class="journey-node action-node" id="node-E1">Download Trial</div>
+                                            </div>
+                                            <div class="lane middle-lane">
+                                                <div class="journey-node" id="node-E2">Test &amp; Validate</div>
+                                            </div>
+                                            <div class="lane bottom-lane"></div>
+                                        </div>
+                                        <!-- ADOPTION & IMPLEMENTATION -->
+                                        <div class="flow-col">
+                                            <div class="lane upper-lane"></div>
+                                            <div class="lane middle-lane">
+                                                <div class="journey-node action-node" id="node-F1">Purchase</div>
+                                                <div class="journey-node" id="node-F2">Implement</div>
+                                            </div>
+                                            <div class="lane bottom-lane"></div>
+                                        </div>
+                                        <!-- RENEWAL -->
+                                        <div class="flow-col">
+                                            <div class="lane upper-lane"></div>
+                                            <div class="lane middle-lane">
+                                                <div class="journey-node action-node" id="node-G2">Up-Sell</div>
+                                            </div>
+                                            <div class="lane bottom-lane"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2: Primary Driving Persona -->
+                                <div class="do-sub-label">Primary Driving Persona</div>
+                                <div class="do-main-area" style="border-bottom:none;">
+
+                                    <div class="persona-track-row">
+                                        <div class="persona-col">
+                                            <div class="persona-bar biz">Business Leader</div>
+                                            <div class="persona-bar tech">Technology Leader</div>
+                                        </div>
+                                        <div class="persona-col">
+                                            <div class="persona-bar biz">Business Leader</div>
+                                            <div class="persona-bar tech">Technology Leader</div>
+                                            <div class="persona-bar dev">Developer</div>
+                                        </div>
+                                        <div class="persona-col">
+                                            <div class="persona-bar biz">Business Leader</div>
+                                            <div class="persona-bar tech">Technology Leader</div>
+                                            <div class="persona-bar dev">Developer</div>
+                                        </div>
+                                        <div class="persona-col">
+                                            <div class="persona-bar tech">Technology Leader</div>
+                                            <div class="persona-bar dev">Developer</div>
+                                            <div class="persona-bar tech">Technology Leader</div>
+                                        </div>
+                                        <div class="persona-col">
+                                            <div class="persona-bar dev">Developer</div>
+                                        </div>
+                                        <div class="persona-col">
+                                            <div class="persona-bar tech">Technology Leader</div>
+                                            <div class="persona-bar sec">Security Leader</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══════════ FEEL ═══════════ -->
+                        <div class="okta-row-wrapper feel-row-wrapper" data-pulse-topic="auth0"
+                            title="Click to view Social Listening Analytics">
+                            <div class="okta-row-label feel-row">Feel</div>
+                            <div class="okta-feel">
+                                <!-- ... existing feel content ... -->
+                                <div class="feel-y-axis">
+                                    <span class="feel-y-label positive">+ Positive</span>
+                                    <span class="feel-y-title">Emotional Responses</span>
+                                    <span class="feel-y-label negative">- Negative</span>
+                                </div>
+                                <div class="feel-data-area">
+                                    <!-- SVG Emotional Curve -->
+                                    <svg id="feel-curve-svg" class="feel-curve-svg" viewBox="0 0 1200 220"
+                                        preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="rgba(229, 224, 216, 0.35)" />
+                                                <!-- Shell -->
+                                                <stop offset="50%" stop-color="rgba(229, 224, 216, 0.05)" />
+                                                <!-- Shell -->
+                                                <stop offset="100%" stop-color="rgba(255, 107, 34, 0.25)" />
+                                                <!-- Solar -->
+                                            </linearGradient>
+                                            <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                                                <stop offset="0%" stop-color="#E5E0D8" />
+                                                <stop offset="25%" stop-color="#FF6B22" />
+                                                <stop offset="45%" stop-color="#E5E0D8" />
+                                                <stop offset="60%" stop-color="#FF6B22" />
+                                                <stop offset="80%" stop-color="#E5E0D8" />
+                                                <stop offset="100%" stop-color="#E5E0D8" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Neutral baseline -->
+                                        <line x1="0" y1="110" x2="1200" y2="110" stroke="rgba(100,116,139,0.15)"
+                                            stroke-width="1" stroke-dasharray="6,4" />
+                                        <!-- Filled area under curve (9 points) -->
+                                        <path
+                                            d="M60,78 C105,78 150,105 195,105 C240,105 285,148 330,148 C375,148 420,205 465,205 C510,205 555,50 600,50 C645,50 690,20 735,20 C780,20 825,205 870,205 C915,205 960,40 1005,40 C1050,40 1095,10 1140,10 L1140,220 L60,220 Z"
+                                            fill="url(#curveGradient)" opacity="0.4" />
+                                        <!-- Main curve line -->
+                                        <path
+                                            d="M60,78 C105,78 150,105 195,105 C240,105 285,148 330,148 C375,148 420,205 465,205 C510,205 555,50 600,50 C645,50 690,20 735,20 C780,20 825,205 870,205 C915,205 960,40 1005,40 C1050,40 1095,10 1140,10"
+                                            fill="none" stroke="url(#lineGradient)" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <!-- 9 Data point dots -->
+                                        <!-- 1: Content (slightly positive) -->
+                                        <circle cx="60" cy="78" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                            stroke-width="1.5" />
+                                        <!-- 2: Frustrated (negative) -->
+                                        <circle cx="195" cy="105" r="5" fill="#FF6B22" stroke="#cc4a0c"
+                                            stroke-width="1.5" />
+                                        <!-- 3: Motivated/Lost (just below neutral) -->
+                                        <circle cx="330" cy="148" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                            stroke-width="1.5" />
+                                        <!-- 4: Overwhelmed (deepest low) -->
+                                        <circle cx="465" cy="205" r="5" fill="#FF6B22" stroke="#cc4a0c"
+                                            stroke-width="1.5" />
+                                        <!-- 5: Encouraged (positive) -->
+                                        <circle cx="600" cy="50" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                            stroke-width="1.5" />
+                                        <!-- 6: Excited (peak positive) -->
+                                        <circle cx="735" cy="20" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                            stroke-width="1.5" />
+                                        <!-- 7: Angry (deep negative) -->
+                                        <circle cx="870" cy="205" r="5" fill="#FF6B22" stroke="#cc4a0c"
+                                            stroke-width="1.5" />
+                                        <!-- 8: At Ease (positive) -->
+                                        <circle cx="1005" cy="40" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                            stroke-width="1.5" />
+                                        <!-- 9: Delighted (highest peak) -->
+                                        <circle cx="1140" cy="10" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                            stroke-width="1.5" />
+                                    </svg>
+                                    <!-- Labels positioned below the curve -->
+                                    <div class="feel-labels">
+                                        <div class="feel-label" style="left: 5%;">
+                                            <span class="feel-emotion positive">Content</span>
+                                            <span class="feel-desc">Content with current solution being out of
+                                                mind</span>
+                                            <div class="social-tooltip">
+                                                <div class="social-header">
+                                                    <div class="social-avatar dev-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">Sarah Chen</span>
+                                                        <span class="social-handle">@sarahchen_dev</span>
+                                                    </div>
+                                                    <span class="social-time">2h</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    Honestly forgot we even had an identity provider until I had to
+                                                    check
+                                                    the billing today. The best kind of software is the kind you never
+                                                    have
+                                                    to think about. 😌 #devops
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 2</span>
+                                                    <span>🔁 1</span>
+                                                    <span>❤️ 24</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label hover-glow" style="left: 16.25%; cursor: pointer;"
+                                            title="View Pulse Analytics for Frustrated" data-pulse-topic="api">
+                                            <span class="feel-emotion negative">Frustrated</span>
+                                            <span class="feel-desc">Frustrated with solution causing problems</span>
+                                            <div class="social-tooltip">
+                                                <div class="social-header">
+                                                    <div class="social-avatar tech-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">Marcus Johnson</span>
+                                                        <span class="social-handle">@marcusj_tech</span>
+                                                    </div>
+                                                    <span class="social-time">45m</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    Why does every new app integration require a custom script and duct
+                                                    tape? Our current identity "solution" is becoming a full-time job to
+                                                    maintain. There has to be a better way... 😤 #ITProblems
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 12</span>
+                                                    <span>🔁 4</span>
+                                                    <span>❤️ 89</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label" style="left: 27.5%;">
+                                            <span class="feel-emotion mixed">Lost</span>
+                                            <span class="feel-desc">Motivated but lost not knowing where to start</span>
+                                            <div class="social-tooltip">
+                                                <div class="social-header">
+                                                    <div class="social-avatar biz-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">Elena Rodriguez</span>
+                                                        <span class="social-handle">@elena_leads</span>
+                                                    </div>
+                                                    <span class="social-time">1d</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    Got the green light for an IAM overhaul! 🎉 Now looking at the
+                                                    vendor
+                                                    landscape and... wow. It's a jungle out there. How do we even begin
+                                                    to
+                                                    compare these features apples-to-apples? 🤔
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 5</span>
+                                                    <span>🔁 0</span>
+                                                    <span>❤️ 18</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label hover-glow" style="left: 38.75%; cursor: pointer;"
+                                            title="View Pulse Analytics for Overwhelmed" data-pulse-topic="dev">
+                                            <span class="feel-emotion negative">Overwhelmed</span>
+                                            <span class="feel-desc">Investigating so many different vendors &amp;
+                                                sites</span>
+                                            <div class="social-tooltip">
+                                                <div class="social-header">
+                                                    <div class="social-avatar sec-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">David Kim</span>
+                                                        <span class="social-handle">@dk_secure</span>
+                                                    </div>
+                                                    <span class="social-time">3h</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    I've read 14 whitepapers, sat through 5 demos, and have 3
+                                                    spreadsheets
+                                                    of feature matrices. My brain feels like mush. Every vendor claims
+                                                    they
+                                                    can do everything. Finding the actual truth is exhausting. 🫠
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 28</span>
+                                                    <span>🔁 15</span>
+                                                    <span>❤️ 204</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label" style="left: 50%;">
+                                            <span class="feel-emotion positive">Encouraged</span>
+                                            <span class="feel-desc">Shortlist finalized, closer to a solution</span>
+                                            <div class="social-tooltip">
+                                                <div class="social-header">
+                                                    <div class="social-avatar tech-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">Marcus Johnson</span>
+                                                        <span class="social-handle">@marcusj_tech</span>
+                                                    </div>
+                                                    <span class="social-time">5h</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    Finally narrowed it down to two identity vendors! 🎯 Both seem
+                                                    capable
+                                                    of handling our edge cases. Really hoping the POC phase proves
+                                                    they're
+                                                    as good as the sales pitch. Light at the end of the tunnel... 💡
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 4</span>
+                                                    <span>🔁 2</span>
+                                                    <span>❤️ 45</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label" style="left: 61.25%;">
+                                            <span class="feel-emotion positive">Excited</span>
+                                            <span class="feel-desc">Excited to test hands-on before buying</span>
+                                            <div class="social-tooltip">
+                                                <div class="social-header">
+                                                    <div class="social-avatar dev-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">Sarah Chen</span>
+                                                        <span class="social-handle">@sarahchen_dev</span>
+                                                    </div>
+                                                    <span class="social-time">10m</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    Just got trial access! 🚀 The API documentation is actually readable
+                                                    and
+                                                    the SDK works out of the box. Building the test integration right
+                                                    now
+                                                    and having way too much fun. Let's build! 💻✨
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 8</span>
+                                                    <span>🔁 3</span>
+                                                    <span>❤️ 112</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label" style="left: 72.5%;">
+                                            <span class="feel-emotion negative">Angry</span>
+                                            <span class="feel-desc">Roadblocks implementing without hand-holding</span>
+                                            <div class="social-tooltip" data-emotion="angry">
+                                                <div class="social-header">
+                                                    <div class="social-avatar dev-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">Sarah Chen</span>
+                                                        <span class="social-handle">@sarahchen_dev</span>
+                                                    </div>
+                                                    <span class="social-time">2h</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    Why is setting up SAML federation treated like forbidden dark
+                                                    magic?! 😤
+                                                    Documentation implies it's "3 easy steps", but doesn't mention the
+                                                    45
+                                                    unstated assumptions. Begging for proper self-serve docs right now.
+                                                    We
+                                                    shouldn't need a support ticket to map attributes! 📉
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 34</span>
+                                                    <span>🔁 22</span>
+                                                    <span>❤️ 315</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label" style="left: 83.75%;">
+                                            <span class="feel-emotion positive">At Ease</span>
+                                            <span class="feel-desc">Solution up and running with little
+                                                maintenance</span>
+                                            <div class="social-tooltip">
+                                                <div class="social-header">
+                                                    <div class="social-avatar biz-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">Elena Rodriguez</span>
+                                                        <span class="social-handle">@elena_leads</span>
+                                                    </div>
+                                                    <span class="social-time">4d</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    First week with the new IAM platform fully rolled out. Zero critical
+                                                    PagerDuty alerts, SSO is working perfectly, and IT tickets have
+                                                    dropped
+                                                    40%. I can finally sleep through the night. ☕️📈
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 1</span>
+                                                    <span>🔁 0</span>
+                                                    <span>❤️ 56</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="feel-label" style="left: 95%;">
+                                            <span class="feel-emotion positive">Delighted</span>
+                                            <span class="feel-desc">Positive ROI and continuing to get more value</span>
+                                            <div class="social-tooltip tooltip-right">
+                                                <div class="social-header">
+                                                    <div class="social-avatar sec-avatar"></div>
+                                                    <div class="social-user">
+                                                        <span class="social-name">David Kim</span>
+                                                        <span class="social-handle">@dk_secure</span>
+                                                    </div>
+                                                    <span class="social-time">1w</span>
+                                                </div>
+                                                <div class="social-body">
+                                                    Just presented the Q3 security review. Not only have we secured our
+                                                    entire perimeter, but the new automated onboarding saved us 200
+                                                    hours
+                                                    this month alone. Best vendor decision we've made all year. 🏆💰
+                                                </div>
+                                                <div class="social-footer">
+                                                    <span>💬 14</span>
+                                                    <span>🔁 8</span>
+                                                    <span>❤️ 188</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══════════ DOCUMENTATION ═══════════ -->
+                        <div class="okta-row-wrapper">
+                            <div class="okta-row-label doc-label">Documentation</div>
+                            <div class="okta-doc">
+                                <div class="doc-sub-row">
+                                    <div class="doc-row-label">Strategy & Assets</div>
+
                                     <!-- PRE-AWARENESS -->
-                                    <div class="flow-col">
-                                        <div class="lane upper-lane">
-                                            <div class="journey-node start-node" id="node-A1">No Existing Solution</div>
-                                            <div class="journey-node" id="node-B1">Reactive &amp; Bottom-Up</div>
+                                    <div class="doc-item" style="cursor: pointer;"
+                                        data-embed="https://docs.google.com/presentation/d/1t5lwo-0Ch_v028Tw0usvRzQrcCLfJqYzUId3uogsUXQ/embed?rm=minimal">
+                                        <div class="doc-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                                </path>
+                                            </svg>
                                         </div>
-                                        <div class="lane middle-lane">
-                                            <div></div>
-                                            <div class="journey-node" id="node-B2">Proactive &amp; Top-Down</div>
-                                        </div>
-                                        <div class="lane bottom-lane">
-                                            <div class="journey-node start-node" id="node-A2">Existing Solution</div>
-                                            <div class="journey-node" id="node-B3">Reactive &amp; Top-Down</div>
-                                        </div>
+                                        <span class="doc-name">Social Listening Assessment</span>
                                     </div>
                                     <!-- AWARENESS -->
-                                    <div class="flow-col">
-                                        <div class="lane upper-lane"></div>
-                                        <div class="lane middle-lane">
-                                            <div class="journey-node" id="node-C1">Align on Solution Need</div>
-                                            <div class="journey-node" id="node-C2">Find Vendors</div>
+                                    <div class="doc-item" style="cursor: pointer;"
+                                        data-embed="https://docs.google.com/presentation/d/1t5lwo-0Ch_v028Tw0usvRzQrcCLfJqYzUId3uogsUXQ/embed?rm=minimal">
+                                        <div class="doc-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="22" y1="12" x2="18" y2="12"></line>
+                                                <line x1="6" y1="12" x2="2" y2="12"></line>
+                                                <line x1="12" y1="6" x2="12" y2="2"></line>
+                                                <line x1="12" y1="22" x2="12" y2="18"></line>
+                                            </svg>
                                         </div>
-                                        <div class="lane bottom-lane">
-                                            <div></div>
-                                            <div class="journey-node" id="node-C3">Peer recommendations</div>
-                                        </div>
+                                        <span class="doc-name">ABX Strategy</span>
                                     </div>
                                     <!-- EVALUATION -->
-                                    <div class="flow-col">
-                                        <div class="lane upper-lane"></div>
-                                        <div class="lane middle-lane">
-                                            <div class="journey-node" id="node-D2">Evaluate Business Value</div>
-                                            <div class="journey-node" id="node-D4">Narrow the Shortlist</div>
+                                    <div class="doc-item" style="cursor: pointer;"
+                                        data-embed="https://docs.google.com/presentation/d/1t5lwo-0Ch_v028Tw0usvRzQrcCLfJqYzUId3uogsUXQ/embed?rm=minimal">
+                                        <div class="doc-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                                            </svg>
                                         </div>
-                                        <div class="lane bottom-lane">
-                                            <div class="journey-node" id="node-D5"
-                                                style="grid-column: span 2; margin: 0 auto; cursor: pointer;"
-                                                data-embed="https://docs.google.com/presentation/d/11luVwrAk7U1uM4dIpQXzjFIR9GOXmnaV9HTUJnsZTro/embed?rm=minimal">
-                                                Contact sales</div>
-                                        </div>
+                                        <span class="doc-name">Contact Form Wireframe</span>
                                     </div>
                                     <!-- SELECTION -->
-                                    <div class="flow-col">
-                                        <div class="lane upper-lane">
-                                            <div class="journey-node action-node" id="node-E1">Download Trial</div>
+                                    <div class="doc-item" style="cursor: pointer;"
+                                        data-embed="https://docs.google.com/presentation/d/1t5lwo-0Ch_v028Tw0usvRzQrcCLfJqYzUId3uogsUXQ/embed?rm=minimal">
+                                        <div class="doc-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                                <path d="M2 2l7.5 1.5"></path>
+                                                <path d="M7 11l-1 3"></path>
+                                                <path d="M11 7l3-1"></path>
+                                            </svg>
                                         </div>
-                                        <div class="lane middle-lane">
-                                            <div class="journey-node" id="node-E2">Test &amp; Validate</div>
-                                        </div>
-                                        <div class="lane bottom-lane"></div>
+                                        <span class="doc-name">Download Page Design</span>
                                     </div>
-                                    <!-- ADOPTION & IMPLEMENTATION -->
-                                    <div class="flow-col">
-                                        <div class="lane upper-lane"></div>
-                                        <div class="lane middle-lane">
-                                            <div class="journey-node action-node" id="node-F1">Purchase</div>
-                                            <div class="journey-node" id="node-F2">Implement</div>
+                                    <!-- ADOPTION -->
+                                    <div class="doc-item" style="cursor: pointer;"
+                                        data-embed="https://docs.google.com/presentation/d/1t5lwo-0Ch_v028Tw0usvRzQrcCLfJqYzUId3uogsUXQ/embed?rm=minimal">
+                                        <div class="doc-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                                <path
+                                                    d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z">
+                                                </path>
+                                            </svg>
                                         </div>
-                                        <div class="lane bottom-lane"></div>
+                                        <span class="doc-name">Sales Enablement Guide</span>
                                     </div>
                                     <!-- RENEWAL -->
-                                    <div class="flow-col">
-                                        <div class="lane upper-lane"></div>
-                                        <div class="lane middle-lane">
-                                            <div class="journey-node action-node" id="node-G2">Up-Sell</div>
+                                    <div class="doc-item" style="cursor: pointer;"
+                                        data-embed="https://docs.google.com/presentation/d/1t5lwo-0Ch_v028Tw0usvRzQrcCLfJqYzUId3uogsUXQ/embed?rm=minimal">
+                                        <div class="doc-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                            </svg>
                                         </div>
-                                        <div class="lane bottom-lane"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Row 2: Primary Driving Persona -->
-                            <div class="do-sub-label">Primary Driving Persona</div>
-                            <div class="do-main-area" style="border-bottom:none;">
-
-                                <div class="persona-track-row">
-                                    <div class="persona-col">
-                                        <div class="persona-bar biz">Business Leader</div>
-                                        <div class="persona-bar tech">Technology Leader</div>
-                                    </div>
-                                    <div class="persona-col">
-                                        <div class="persona-bar biz">Business Leader</div>
-                                        <div class="persona-bar tech">Technology Leader</div>
-                                        <div class="persona-bar dev">Developer</div>
-                                    </div>
-                                    <div class="persona-col">
-                                        <div class="persona-bar biz">Business Leader</div>
-                                        <div class="persona-bar tech">Technology Leader</div>
-                                        <div class="persona-bar dev">Developer</div>
-                                    </div>
-                                    <div class="persona-col">
-                                        <div class="persona-bar tech">Technology Leader</div>
-                                        <div class="persona-bar dev">Developer</div>
-                                        <div class="persona-bar tech">Technology Leader</div>
-                                    </div>
-                                    <div class="persona-col">
-                                        <div class="persona-bar dev">Developer</div>
-                                    </div>
-                                    <div class="persona-col">
-                                        <div class="persona-bar tech">Technology Leader</div>
-                                        <div class="persona-bar sec">Security Leader</div>
+                                        <span class="doc-name">Up-sell Ads Creative Direction</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- ═══════════ FEEL ═══════════ -->
-                    <div class="okta-row-wrapper">
-                        <div class="okta-row-label feel-row">Feel</div>
-                        <div class="okta-feel">
-                            <!-- ... existing feel content ... -->
-                            <div class="feel-y-axis">
-                                <span class="feel-y-label positive">+ Positive</span>
-                                <span class="feel-y-title">Emotional Responses</span>
-                                <span class="feel-y-label negative">- Negative</span>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End journey-view -->
+
+        <!-- ═══════════ EDITOR VIEW (MOCK) ═══════════ -->
+        <div id="editor-view" class="view-content">
+            <header class="app-header okta-logo-header">
+                <div class="core-logo-block">
+                    <div class="core-client-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="30" height="30"
+                            class="client-logo-icon" style="flex-shrink: 0; min-width: 30px; min-height: 30px;">
+                            <defs>
+                                <linearGradient id="logo-hex-grad-editor" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FF6B22" />
+                                    <stop offset="100%" stop-color="#fbbf24" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M20 0 L38 10.4 L38 29.6 L20 40 L2 29.6 L2 10.4 Z" fill="url(#logo-hex-grad-editor)"
+                                opacity="0.9" />
+                            <path d="M20 7 L31 13 L31 27 L20 33 L9 27 L9 13 Z" fill="#0A0F1C" />
+                            <circle cx="20" cy="20" r="4.5" fill="#FFFFFF" />
+                        </svg>
+                        <div class="core-client-name">Template Mode</div>
+                    </div>
+                    <div class="core-powered-by">Interactive Journey <strong>Editor</strong></div>
+                </div>
+            </header>
+
+            <div class="okta-body editor-body">
+                <div class="editor-glass-container">
+                    <div class="editor-sidebar">
+                        <div class="editor-nav-item active">Navigation & Stages</div>
+                        <div class="editor-nav-item">Think Section</div>
+                        <div class="editor-nav-item">Do (Flowchart)</div>
+                        <div class="editor-nav-item">Feel (Social)</div>
+                        <div class="editor-nav-item">Personas</div>
+                        <div class="editor-nav-item">Documentation</div>
+                        <div class="editor-nav-item">Onboarding</div>
+                    </div>
+                    <div class="editor-main">
+                        <div class="editor-section">
+                            <h3 style="margin-top:0">Journey Information</h3>
+                            <div class="editor-field-group">
+                                <label>Main Title</label>
+                                <input type="text" value="Interactive Journey" placeholder="Enter journey title...">
                             </div>
-                            <div class="feel-data-area">
-                                <!-- SVG Emotional Curve -->
-                                <svg id="feel-curve-svg" class="feel-curve-svg" viewBox="0 0 1200 220"
-                                    preserveAspectRatio="none">
-                                    <defs>
-                                        <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="rgba(229, 224, 216, 0.35)" /> <!-- Shell -->
-                                            <stop offset="50%" stop-color="rgba(229, 224, 216, 0.05)" /> <!-- Shell -->
-                                            <stop offset="100%" stop-color="rgba(255, 107, 34, 0.25)" /> <!-- Solar -->
-                                        </linearGradient>
-                                        <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
-                                            <stop offset="0%" stop-color="#E5E0D8" />
-                                            <stop offset="25%" stop-color="#FF6B22" />
-                                            <stop offset="45%" stop-color="#E5E0D8" />
-                                            <stop offset="60%" stop-color="#FF6B22" />
-                                            <stop offset="80%" stop-color="#E5E0D8" />
-                                            <stop offset="100%" stop-color="#E5E0D8" />
-                                        </linearGradient>
-                                    </defs>
-                                    <!-- Neutral baseline -->
-                                    <line x1="0" y1="110" x2="1200" y2="110" stroke="rgba(100,116,139,0.15)"
-                                        stroke-width="1" stroke-dasharray="6,4" />
-                                    <!-- Filled area under curve (9 points) -->
-                                    <path
-                                        d="M60,78 C105,78 150,105 195,105 C240,105 285,148 330,148 C375,148 420,205 465,205 C510,205 555,50 600,50 C645,50 690,20 735,20 C780,20 825,205 870,205 C915,205 960,40 1005,40 C1050,40 1095,10 1140,10 L1140,220 L60,220 Z"
-                                        fill="url(#curveGradient)" opacity="0.4" />
-                                    <!-- Main curve line -->
-                                    <path
-                                        d="M60,78 C105,78 150,105 195,105 C240,105 285,148 330,148 C375,148 420,205 465,205 C510,205 555,50 600,50 C645,50 690,20 735,20 C780,20 825,205 870,205 C915,205 960,40 1005,40 C1050,40 1095,10 1140,10"
-                                        fill="none" stroke="url(#lineGradient)" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <!-- 9 Data point dots -->
-                                    <!-- 1: Content (slightly positive) -->
-                                    <circle cx="60" cy="78" r="5" fill="#E5E0D8" stroke="#ffffff" stroke-width="1.5" />
-                                    <!-- 2: Frustrated (negative) -->
-                                    <circle cx="195" cy="105" r="5" fill="#FF6B22" stroke="#cc4a0c"
-                                        stroke-width="1.5" />
-                                    <!-- 3: Motivated/Lost (just below neutral) -->
-                                    <circle cx="330" cy="148" r="5" fill="#E5E0D8" stroke="#ffffff"
-                                        stroke-width="1.5" />
-                                    <!-- 4: Overwhelmed (deepest low) -->
-                                    <circle cx="465" cy="205" r="5" fill="#FF6B22" stroke="#cc4a0c"
-                                        stroke-width="1.5" />
-                                    <!-- 5: Encouraged (positive) -->
-                                    <circle cx="600" cy="50" r="5" fill="#E5E0D8" stroke="#ffffff" stroke-width="1.5" />
-                                    <!-- 6: Excited (peak positive) -->
-                                    <circle cx="735" cy="20" r="5" fill="#E5E0D8" stroke="#ffffff" stroke-width="1.5" />
-                                    <!-- 7: Angry (deep negative) -->
-                                    <circle cx="870" cy="205" r="5" fill="#FF6B22" stroke="#cc4a0c"
-                                        stroke-width="1.5" />
-                                    <!-- 8: At Ease (positive) -->
-                                    <circle cx="1005" cy="40" r="5" fill="#E5E0D8" stroke="#ffffff"
-                                        stroke-width="1.5" />
-                                    <!-- 9: Delighted (highest peak) -->
-                                    <circle cx="1140" cy="10" r="5" fill="#E5E0D8" stroke="#ffffff"
-                                        stroke-width="1.5" />
-                                </svg>
-                                <!-- Labels positioned below the curve -->
-                                <div class="feel-labels">
-                                    <div class="feel-label" style="left: 5%;">
-                                        <span class="feel-emotion positive">Content</span>
-                                        <span class="feel-desc">Content with current solution being out of mind</span>
-                                        <div class="social-tooltip">
-                                            <div class="social-header">
-                                                <div class="social-avatar dev-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">Sarah Chen</span>
-                                                    <span class="social-handle">@sarahchen_dev</span>
-                                                </div>
-                                                <span class="social-time">2h</span>
-                                            </div>
-                                            <div class="social-body">
-                                                Honestly forgot we even had an identity provider until I had to check
-                                                the billing today. The best kind of software is the kind you never have
-                                                to think about. 😌 #devops
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 2</span>
-                                                <span>🔁 1</span>
-                                                <span>❤️ 24</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label hover-glow" style="left: 16.25%; cursor: pointer;"
-                                        title="View Pulse Analytics for Frustrated" data-pulse-topic="api">
-                                        <span class="feel-emotion negative">Frustrated</span>
-                                        <span class="feel-desc">Frustrated with solution causing problems</span>
-                                        <div class="social-tooltip">
-                                            <div class="social-header">
-                                                <div class="social-avatar tech-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">Marcus Johnson</span>
-                                                    <span class="social-handle">@marcusj_tech</span>
-                                                </div>
-                                                <span class="social-time">45m</span>
-                                            </div>
-                                            <div class="social-body">
-                                                Why does every new app integration require a custom script and duct
-                                                tape? Our current identity "solution" is becoming a full-time job to
-                                                maintain. There has to be a better way... 😤 #ITProblems
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 12</span>
-                                                <span>🔁 4</span>
-                                                <span>❤️ 89</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label" style="left: 27.5%;">
-                                        <span class="feel-emotion mixed">Lost</span>
-                                        <span class="feel-desc">Motivated but lost not knowing where to start</span>
-                                        <div class="social-tooltip">
-                                            <div class="social-header">
-                                                <div class="social-avatar biz-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">Elena Rodriguez</span>
-                                                    <span class="social-handle">@elena_leads</span>
-                                                </div>
-                                                <span class="social-time">1d</span>
-                                            </div>
-                                            <div class="social-body">
-                                                Got the green light for an IAM overhaul! 🎉 Now looking at the vendor
-                                                landscape and... wow. It's a jungle out there. How do we even begin to
-                                                compare these features apples-to-apples? 🤔
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 5</span>
-                                                <span>🔁 0</span>
-                                                <span>❤️ 18</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label hover-glow" style="left: 38.75%; cursor: pointer;"
-                                        title="View Pulse Analytics for Overwhelmed" data-pulse-topic="dev">
-                                        <span class="feel-emotion negative">Overwhelmed</span>
-                                        <span class="feel-desc">Investigating so many different vendors &amp;
-                                            sites</span>
-                                        <div class="social-tooltip">
-                                            <div class="social-header">
-                                                <div class="social-avatar sec-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">David Kim</span>
-                                                    <span class="social-handle">@dk_secure</span>
-                                                </div>
-                                                <span class="social-time">3h</span>
-                                            </div>
-                                            <div class="social-body">
-                                                I've read 14 whitepapers, sat through 5 demos, and have 3 spreadsheets
-                                                of feature matrices. My brain feels like mush. Every vendor claims they
-                                                can do everything. Finding the actual truth is exhausting. 🫠
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 28</span>
-                                                <span>🔁 15</span>
-                                                <span>❤️ 204</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label" style="left: 50%;">
-                                        <span class="feel-emotion positive">Encouraged</span>
-                                        <span class="feel-desc">Shortlist finalized, closer to a solution</span>
-                                        <div class="social-tooltip">
-                                            <div class="social-header">
-                                                <div class="social-avatar tech-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">Marcus Johnson</span>
-                                                    <span class="social-handle">@marcusj_tech</span>
-                                                </div>
-                                                <span class="social-time">5h</span>
-                                            </div>
-                                            <div class="social-body">
-                                                Finally narrowed it down to two identity vendors! 🎯 Both seem capable
-                                                of handling our edge cases. Really hoping the POC phase proves they're
-                                                as good as the sales pitch. Light at the end of the tunnel... 💡
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 4</span>
-                                                <span>🔁 2</span>
-                                                <span>❤️ 45</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label" style="left: 61.25%;">
-                                        <span class="feel-emotion positive">Excited</span>
-                                        <span class="feel-desc">Excited to test hands-on before buying</span>
-                                        <div class="social-tooltip">
-                                            <div class="social-header">
-                                                <div class="social-avatar dev-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">Sarah Chen</span>
-                                                    <span class="social-handle">@sarahchen_dev</span>
-                                                </div>
-                                                <span class="social-time">10m</span>
-                                            </div>
-                                            <div class="social-body">
-                                                Just got trial access! 🚀 The API documentation is actually readable and
-                                                the SDK works out of the box. Building the test integration right now
-                                                and having way too much fun. Let's build! 💻✨
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 8</span>
-                                                <span>🔁 3</span>
-                                                <span>❤️ 112</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label" style="left: 72.5%;">
-                                        <span class="feel-emotion negative">Angry</span>
-                                        <span class="feel-desc">Roadblocks implementing without hand-holding</span>
-                                        <div class="social-tooltip" data-emotion="angry">
-                                            <div class="social-header">
-                                                <div class="social-avatar dev-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">Sarah Chen</span>
-                                                    <span class="social-handle">@sarahchen_dev</span>
-                                                </div>
-                                                <span class="social-time">2h</span>
-                                            </div>
-                                            <div class="social-body">
-                                                Why is setting up SAML federation treated like forbidden dark magic?! 😤
-                                                Documentation implies it's "3 easy steps", but doesn't mention the 45
-                                                unstated assumptions. Begging for proper self-serve docs right now. We
-                                                shouldn't need a support ticket to map attributes! 📉
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 34</span>
-                                                <span>🔁 22</span>
-                                                <span>❤️ 315</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label" style="left: 83.75%;">
-                                        <span class="feel-emotion positive">At Ease</span>
-                                        <span class="feel-desc">Solution up and running with little maintenance</span>
-                                        <div class="social-tooltip">
-                                            <div class="social-header">
-                                                <div class="social-avatar biz-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">Elena Rodriguez</span>
-                                                    <span class="social-handle">@elena_leads</span>
-                                                </div>
-                                                <span class="social-time">4d</span>
-                                            </div>
-                                            <div class="social-body">
-                                                First week with the new IAM platform fully rolled out. Zero critical
-                                                PagerDuty alerts, SSO is working perfectly, and IT tickets have dropped
-                                                40%. I can finally sleep through the night. ☕️📈
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 1</span>
-                                                <span>🔁 0</span>
-                                                <span>❤️ 56</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feel-label" style="left: 95%;">
-                                        <span class="feel-emotion positive">Delighted</span>
-                                        <span class="feel-desc">Positive ROI and continuing to get more value</span>
-                                        <div class="social-tooltip tooltip-right">
-                                            <div class="social-header">
-                                                <div class="social-avatar sec-avatar"></div>
-                                                <div class="social-user">
-                                                    <span class="social-name">David Kim</span>
-                                                    <span class="social-handle">@dk_secure</span>
-                                                </div>
-                                                <span class="social-time">1w</span>
-                                            </div>
-                                            <div class="social-body">
-                                                Just presented the Q3 security review. Not only have we secured our
-                                                entire perimeter, but the new automated onboarding saved us 200 hours
-                                                this month alone. Best vendor decision we've made all year. 🏆💰
-                                            </div>
-                                            <div class="social-footer">
-                                                <span>💬 14</span>
-                                                <span>🔁 8</span>
-                                                <span>❤️ 188</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="editor-field-group">
+                                <label>Sub Title</label>
+                                <input type="text" value="An Interactive Experience" placeholder="Enter subtitle...">
                             </div>
                         </div>
-                    </div>
 
-                    <!-- ═══════════ DOCUMENTATION ═══════════ -->
-                    <div class="okta-row-wrapper">
-                        <div class="okta-row-label doc-label">Documentation</div>
-                        <div class="okta-doc">
-                            <div class="doc-sub-row">
-                                <div class="doc-row-label">Strategy & Assets</div>
-
-                                <!-- PRE-AWARENESS -->
-                                <div class="doc-item">
-                                    <div class="doc-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <span class="doc-name">Social Listening Assessment</span>
+                        <div class="editor-section">
+                            <h3>Journey Stages (Columns)</h3>
+                            <div class="editor-grid-list">
+                                <div class="editor-item-card">
+                                    <input type="text" value="Pre-Awareness">
+                                    <button class="editor-icon-btn">🗑️</button>
                                 </div>
-                                <!-- AWARENESS -->
-                                <div class="doc-item">
-                                    <div class="doc-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="22" y1="12" x2="18" y2="12"></line>
-                                            <line x1="6" y1="12" x2="2" y2="12"></line>
-                                            <line x1="12" y1="6" x2="12" y2="2"></line>
-                                            <line x1="12" y1="22" x2="12" y2="18"></line>
-                                        </svg>
-                                    </div>
-                                    <span class="doc-name">ABX Strategy</span>
+                                <div class="editor-item-card">
+                                    <input type="text" value="Awareness">
+                                    <button class="editor-icon-btn">🗑️</button>
                                 </div>
-                                <!-- EVALUATION -->
-                                <div class="doc-item">
-                                    <div class="doc-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="3" y1="9" x2="21" y2="9"></line>
-                                            <line x1="9" y1="21" x2="9" y2="9"></line>
-                                        </svg>
-                                    </div>
-                                    <span class="doc-name">Contact Form Wireframe</span>
+                                <div class="editor-item-card">
+                                    <input type="text" value="Evaluation">
+                                    <button class="editor-icon-btn">🗑️</button>
                                 </div>
-                                <!-- SELECTION -->
-                                <div class="doc-item">
-                                    <div class="doc-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                                            <path d="M2 2l7.5 1.5"></path>
-                                            <path d="M7 11l-1 3"></path>
-                                            <path d="M11 7l3-1"></path>
-                                        </svg>
-                                    </div>
-                                    <span class="doc-name">Download Page Design</span>
+                                <div class="editor-item-card">
+                                    <input type="text" value="Selection">
+                                    <button class="editor-icon-btn">🗑️</button>
                                 </div>
-                                <!-- ADOPTION -->
-                                <div class="doc-item">
-                                    <div class="doc-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <span class="doc-name">Sales Enablement Guide</span>
-                                </div>
-                                <!-- RENEWAL -->
-                                <div class="doc-item">
-                                    <div class="doc-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-                                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-                                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                        </svg>
-                                    </div>
-                                    <span class="doc-name">Up-sell Ads Creative Direction</span>
-                                </div>
+                                <button class="editor-add-btn">+ Add Stage</button>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="editor-footer">
+                            <button class="editor-secondary-btn">Reset Changes</button>
+                            <button class="editor-primary-btn">Save Template</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Journey Navigation — Bottom -->
         <footer class="journey-footer">
             <div class="journey-nav">
-                <a href="index.html" class="nav-btn">Journey 1</a>
-                <a href="journey2.html" class="nav-btn active">Main Journey</a>
+                <a href="#" class="nav-btn active" data-view-trigger="journey-view">Interactive Journey</a>
+                <a href="#" class="nav-btn" data-view-trigger="editor-view">Editor <span
+                        class="beta-tag">Mock</span></a>
+                <button onclick="startOnboarding()" class="nav-btn onboarding-trigger">Help / Tour</button>
             </div>
         </footer>
     </div>
@@ -647,22 +767,27 @@
                             <div class="chat-msg-avatar"><img src="persona-business-leader.png" alt="" /></div>
                             <div class="chat-msg-bubble">
                                 Hi! I'm a Business Leader — think CMO, CPO, or VP of Marketing. I focus on driving
-                                growth, optimizing customer experience, and scaling the business without compromising
+                                growth, optimizing customer experience, and scaling the business without
+                                compromising
                                 security. Ask me about my priorities, challenges, or how I evaluate solutions.
                             </div>
                         </div>
                     </div>
 
                     <div class="persona-chat-chips" id="persona-chat-chips">
-                        <button class="chat-chip" data-question="What keeps you up at night?">💭 What keeps you up at
+                        <button class="chat-chip" data-question="What keeps you up at night?">💭 What keeps you up
+                            at
                             night?</button>
-                        <button class="chat-chip" data-question="How do you evaluate identity vendors?">🔍 How do you
+                        <button class="chat-chip" data-question="How do you evaluate identity vendors?">🔍 How do
+                            you
                             evaluate vendors?</button>
-                        <button class="chat-chip" data-question="What's your role in the purchasing process?">🛒 Your
+                        <button class="chat-chip" data-question="What's your role in the purchasing process?">🛒
+                            Your
                             role in purchasing?</button>
                         <button class="chat-chip" data-question="What content do you find most valuable?">📊 Most
                             valuable content?</button>
-                        <button class="chat-chip" data-question="How do you feel during vendor evaluation?">😤 Feelings
+                        <button class="chat-chip" data-question="How do you feel during vendor evaluation?">😤
+                            Feelings
                             during evaluation?</button>
                     </div>
 
@@ -703,7 +828,8 @@
                     </div>
 
                     <div class="persona-popup-section">
-                        <h3 class="persona-popup-section-title">Mindset <span class="persona-popup-subtitle">(Think /
+                        <h3 class="persona-popup-section-title">Mindset <span class="persona-popup-subtitle">(Think
+                                /
                                 Feel / Do)</span></h3>
                         <div class="persona-mindset-grid">
                             <div class="mindset-col">
@@ -843,13 +969,15 @@
                                 <div class="segment-card">
                                     <div class="segment-card-header strategic">Strategic &amp; Enterprise</div>
                                     <p>Decision influencers defining the organization's business needs and goals.
-                                        Interested in technology-driven business value to gain a competitive advantage.
+                                        Interested in technology-driven business value to gain a competitive
+                                        advantage.
                                     </p>
                                 </div>
                                 <div class="segment-card">
                                     <div class="segment-card-header commercial">Commercial</div>
                                     <p>Decision makers who collaborate closely with IT leaders to ensure digital
-                                        solutions ladder up to outcomes like productivity, cost efficiency, and customer
+                                        solutions ladder up to outcomes like productivity, cost efficiency, and
+                                        customer
                                         satisfaction.</p>
                                 </div>
                             </div>
@@ -858,7 +986,8 @@
                         <div class="persona-popup-subsection">
                             <h4>Role in Cross-Selling</h4>
                             <p>One of the main stakeholders but not the most relevant decision maker when expanding
-                                identity solutions. Will trust the advice of tech and security leaders when assessing
+                                identity solutions. Will trust the advice of tech and security leaders when
+                                assessing
                                 alternatives.</p>
                         </div>
                     </div>
@@ -984,7 +1113,8 @@
                 <div class="okta-ai-msg ai">
                     <div class="okta-ai-msg-content">
                         Hello! I'm your Journey AI assistant.<br>
-                        Ask me about any journey stage — from Pre-Awareness to Renewal — or click a suggestion below.
+                        Ask me about any journey stage — from Pre-Awareness to Renewal — or click a suggestion
+                        below.
                     </div>
                 </div>
                 <div class="okta-ai-chips">
@@ -1549,8 +1679,41 @@
 
                 </div>
 
-                <!-- Right Column (Live Feed) -->
+                <!-- Right Column (AI Assistant + Live Feed) -->
                 <div class="pulse-col-right">
+                    <!-- AI Assistant Panel -->
+                    <div class="pulse-panel ai-assistant-panel">
+                        <div class="pulse-panel-header">
+                            <div>
+                                <h3>AI Insights</h3>
+                                <p class="pulse-subtext">Automated summary of community discourse</p>
+                            </div>
+                        </div>
+                        <div class="pulse-ai-summary">
+                            <p id="pulse-ai-summary-text">The conversation is centered on Auth0 platform migration
+                                and
+                                RBAC setup. Concerns about API rate limits and security breaches are highlighted by
+                                several users.</p>
+                        </div>
+                        <div class="pulse-ai-chat" id="pulse-ai-chat">
+                            <div class="pulse-ai-messages" id="pulse-ai-messages">
+                                <!-- Messages will appear here -->
+                            </div>
+                            <div class="pulse-ai-input-row">
+                                <input type="text" id="pulse-ai-input" placeholder="Ask AI about these topics..."
+                                    autocomplete="off">
+                                <button id="pulse-ai-send" class="pulse-ai-send-btn">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Voices Panel -->
                     <div class="pulse-panel feed-panel">
                         <div class="pulse-panel-header">
                             <div>
@@ -1573,6 +1736,7 @@
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="okta-pulse.js"></script>
+    <script src="onboarding.js"></script>
 </body>
 
 </html>
