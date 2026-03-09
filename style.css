@@ -1,22 +1,22 @@
 :root {
-    --bg-base: #0a0e1a;
-    --bg-dark: #060a14;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-indigo: #6366f1;
-    --accent-purple: #8b5cf6;
-    --accent-pink: #ec4899;
-    --accent-yellow: #fbbf24;
-    --accent-blue: #3b82f6;
+    --bg-base: #0A0B26;
+    --bg-dark: #060816;
+    --text-primary: #E5E0D8;
+    --text-secondary: rgba(229, 224, 216, 0.7);
+    --text-muted: rgba(229, 224, 216, 0.45);
+    --accent-indigo: #4114FF;
+    --accent-purple: #6C3AFF;
+    --accent-pink: #8A84FF;
+    --accent-yellow: #FF9F59;
+    --accent-blue: #8A84FF;
     --accent-emerald: #10b981;
-    --accent-sky: #0ea5e9;
+    --accent-sky: #4114FF;
     --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.07);
-    --node-bg: rgba(15, 23, 42, 0.85);
-    --node-border: rgba(100, 116, 139, 0.35);
-    --building-accent: #3b82f6;
-    --designing-accent: #8b5cf6;
+    --glass-border: rgba(138, 132, 255, 0.12);
+    --node-bg: rgba(10, 11, 38, 0.85);
+    --node-border: rgba(138, 132, 255, 0.25);
+    --building-accent: #4114FF;
+    --designing-accent: #8A84FF;
 }
 
 * {
@@ -40,13 +40,8 @@ body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image:
-        radial-gradient(circle at 15% 25%, rgba(99, 102, 241, 0.12), transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.10), transparent 45%),
-        radial-gradient(circle at 55% 10%, rgba(59, 130, 246, 0.06), transparent 40%),
-        radial-gradient(circle at 40% 90%, rgba(236, 72, 153, 0.05), transparent 40%);
+    background: url('okta-bg.png') center center / cover no-repeat fixed;
     z-index: 0;
-    animation: bgPulse 12s ease-in-out infinite alternate;
 }
 
 @keyframes bgPulse {
@@ -195,6 +190,95 @@ body::before {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ═══════════ OKTA LOGO HEADER ═══════════ */
+.okta-logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 0 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.okta-logo {
+    width: 140px;
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.okta-logo:hover {
+    opacity: 1;
+}
+
+/* ═══════════ CORE TEXT LOGO ═══════════ */
+.core-logo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.1;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.core-logo-block:hover {
+    opacity: 1;
+}
+
+.core-client-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2px;
+}
+
+.client-logo-icon {
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.core-client-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    line-height: 1;
+}
+
+.core-powered-by {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.core-powered-by strong {
+    font-weight: 600;
+    color: var(--col-select);
+    /* Using a nice blue/purple accent color */
+}
+
+/* ═══════════ JOURNEY FOOTER ═══════════ */
+.journey-footer {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.journey-footer .journey-nav {
+    display: flex;
+    gap: 0.8rem;
 }
 
 /* ═══════════ PHASE HEADERS ═══════════ */
@@ -1872,4 +1956,39 @@ body::before {
     filter: blur(0px);
     pointer-events: auto;
     transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), filter 1s ease-out;
+}
+
+/* ═══════════ NAVIGATION ═══════════ */
+.journey-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.nav-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.nav-btn:hover {
+    color: var(--text-primary);
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.1));
+    border-color: rgba(139, 92, 246, 0.5);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
 }

@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive User Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="okta-journey.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+
+    <div class="app-container">
+        <header class="app-header okta-logo-header">
+            <div class="core-logo-block">
+                <div class="core-client-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="30" height="30"
+                        class="client-logo-icon" style="flex-shrink: 0; min-width: 30px; min-height: 30px;">
+                        <defs>
+                            <linearGradient id="logo-hex-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#8884FF" />
+                                <stop offset="100%" stop-color="#4ADE80" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 0 L38 10.4 L38 29.6 L20 40 L2 29.6 L2 10.4 Z" fill="url(#logo-hex-grad)"
+                            opacity="0.9" />
+                        <path d="M20 7 L31 13 L31 27 L20 33 L9 27 L9 13 Z" fill="#0A0F1C" />
+                        <circle cx="20" cy="20" r="4.5" fill="#FFFFFF" />
+                    </svg>
+                    <div class="core-client-name">Client X</div>
+                </div>
+                <div class="core-powered-by">Powered by <strong>C.O.R.E.</strong> Customer Observation & Research Engine
+                </div>
+            </div>
+        </header>
+
+        <!-- ═══════════ OKTA JOURNEY MAP ═══════════ -->
+        <div class="okta-journey">
+
+            <!-- Column Headers -->
+            <div class="okta-col-headers">
+                <div class="okta-col-header-spacer"></div>
+                <div class="okta-col-header">Pre-Awareness</div>
+                <div class="okta-col-header">Awareness</div>
+                <div class="okta-col-header">Evaluation</div>
+                <div class="okta-col-header">Selection</div>
+                <div class="okta-col-header">Adoption</div>
+                <div class="okta-col-header">Renewal</div>
+            </div>
+
+            <!-- Main Body -->
+            <div class="okta-body">
+
+                <div class="okta-content">
+
+                    <!-- ═══════════ THINK ═══════════ -->
+                    <div class="okta-row-wrapper">
+                        <div class="okta-row-label think-label">Think</div>
+                        <div class="okta-think">
+                            <div class="think-sub-row">
+                                <div class="think-row-label">Buyer Mindset</div>
+                                <div class="think-cell buyer-mindset"
+                                    data-full-text="I am frustrated with fragmentation, increasing complexity from my remote workforce, and identity-based threats.">
+                                    Frustrated by fragmentation and complexity.</div>
+                                <div class="think-cell buyer-mindset"
+                                    data-full-text="I believe a better identity solution is the key to helping me reduce risk, reduce complexity, and accelerate automation.">
+                                    Seeking better identity solution.</div>
+                                <div class="think-cell buyer-mindset"
+                                    data-full-text="I want to make sure I find the right solution for my specific needs.">
+                                    Finding the right solution.</div>
+                                <div class="think-cell buyer-mindset"
+                                    data-full-text="I want evidence that the identity solution I choose is the right one and will have a positive ROI.">
+                                    Need evidence of positive ROI.</div>
+                                <div class="think-cell buyer-mindset"
+                                    data-full-text="I want to get this new solution up and running as soon &amp; seamlessly as possible to finally resolve this problem.">
+                                    Want fast, seamless implementation.</div>
+                                <div class="think-cell buyer-mindset"
+                                    data-full-text="I wonder if I can get more out of this solution.">Maximizing the
+                                    solution's value.</div>
+                            </div>
+                            <div class="think-sub-row">
+                                <div class="think-row-label">Key Barrier</div>
+                                <div class="think-cell">Hard to align teams on new solutions when proactive. If
+                                    reactive, lack of time for deep research.</div>
+                                <div class="think-cell">Difficult to parse and synthesize the vast amount of information
+                                    across different domains.</div>
+                                <div class="think-cell">Lack of resources to directly compare vendor products and
+                                    pricing for specific use cases.</div>
+                                <div class="think-cell">Hard to gain team alignment without clear understanding of
+                                    impact and implementation details.</div>
+                                <div class="think-cell">Engineers must often learn implementation without trials. No
+                                    single source of truth exists.</div>
+                                <div class="think-cell">Unclear how to measure ROI or understand the true value of
+                                    expanding the current system.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════ DO ═══════════ -->
+                    <div class="okta-row-wrapper">
+                        <div class="okta-row-label do-label">Do</div>
+                        <div class="okta-do">
+
+                            <!-- Row 1: Behavior / Flowchart -->
+                            <div class="do-sub-label">Behavior</div>
+                            <div class="do-main-area" id="flowchart-area">
+
+                                <!-- Fingerprint legend (Removed context) -->
+                                <div class="fp-legend" style="display: none;"></div>
+
+                                <!-- SVG overlay for connector lines -->
+                                <svg id="flowchart-svg" class="flowchart-svg"></svg>
+
+                                <!-- Flowchart nodes — 3 lane grid layout -->
+                                <div class="do-flowchart" id="do-flowchart">
+                                    <!-- PRE-AWARENESS -->
+                                    <div class="flow-col">
+                                        <div class="lane upper-lane">
+                                            <div class="journey-node start-node" id="node-A1">No Existing Solution</div>
+                                            <div class="journey-node" id="node-B1">Reactive &amp; Bottom-Up</div>
+                                        </div>
+                                        <div class="lane middle-lane">
+                                            <div></div>
+                                            <div class="journey-node" id="node-B2">Proactive &amp; Top-Down</div>
+                                        </div>
+                                        <div class="lane bottom-lane">
+                                            <div class="journey-node start-node" id="node-A2">Existing Solution</div>
+                                            <div class="journey-node" id="node-B3">Reactive &amp; Top-Down</div>
+                                        </div>
+                                    </div>
+                                    <!-- AWARENESS -->
+                                    <div class="flow-col">
+                                        <div class="lane upper-lane"></div>
+                                        <div class="lane middle-lane">
+                                            <div class="journey-node" id="node-C1">Align on Solution Need</div>
+                                            <div class="journey-node" id="node-C2">Find Vendors</div>
+                                        </div>
+                                        <div class="lane bottom-lane">
+                                            <div></div>
+                                            <div class="journey-node" id="node-C3">Peer recommendations</div>
+                                        </div>
+                                    </div>
+                                    <!-- EVALUATION -->
+                                    <div class="flow-col">
+                                        <div class="lane upper-lane"></div>
+                                        <div class="lane middle-lane">
+                                            <div class="journey-node" id="node-D2">Evaluate Business Value</div>
+                                            <div class="journey-node" id="node-D4">Narrow the Shortlist</div>
+                                        </div>
+                                        <div class="lane bottom-lane">
+                                            <div class="journey-node" id="node-D5"
+                                                style="grid-column: span 2; margin: 0 auto; cursor: pointer;"
+                                                data-embed="https://docs.google.com/presentation/d/11luVwrAk7U1uM4dIpQXzjFIR9GOXmnaV9HTUJnsZTro/embed?rm=minimal">
+                                                Contact sales</div>
+                                        </div>
+                                    </div>
+                                    <!-- SELECTION -->
+                                    <div class="flow-col">
+                                        <div class="lane upper-lane">
+                                            <div class="journey-node action-node" id="node-E1">Download Trial</div>
+                                        </div>
+                                        <div class="lane middle-lane">
+                                            <div class="journey-node" id="node-E2">Test &amp; Validate</div>
+                                        </div>
+                                        <div class="lane bottom-lane"></div>
+                                    </div>
+                                    <!-- ADOPTION & IMPLEMENTATION -->
+                                    <div class="flow-col">
+                                        <div class="lane upper-lane"></div>
+                                        <div class="lane middle-lane">
+                                            <div class="journey-node action-node" id="node-F1">Purchase</div>
+                                            <div class="journey-node" id="node-F2">Implement</div>
+                                        </div>
+                                        <div class="lane bottom-lane"></div>
+                                    </div>
+                                    <!-- RENEWAL -->
+                                    <div class="flow-col">
+                                        <div class="lane upper-lane"></div>
+                                        <div class="lane middle-lane">
+                                            <div class="journey-node action-node" id="node-G2">Up-Sell</div>
+                                        </div>
+                                        <div class="lane bottom-lane"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2: Primary Driving Persona -->
+                            <div class="do-sub-label">Primary Driving Persona</div>
+                            <div class="do-main-area" style="border-bottom:none;">
+
+                                <div class="persona-track-row">
+                                    <div class="persona-col">
+                                        <div class="persona-bar biz">Business Leader</div>
+                                        <div class="persona-bar tech">Technology Leader</div>
+                                    </div>
+                                    <div class="persona-col">
+                                        <div class="persona-bar biz">Business Leader</div>
+                                        <div class="persona-bar tech">Technology Leader</div>
+                                        <div class="persona-bar dev">Developer</div>
+                                    </div>
+                                    <div class="persona-col">
+                                        <div class="persona-bar biz">Business Leader</div>
+                                        <div class="persona-bar tech">Technology Leader</div>
+                                        <div class="persona-bar dev">Developer</div>
+                                    </div>
+                                    <div class="persona-col">
+                                        <div class="persona-bar tech">Technology Leader</div>
+                                        <div class="persona-bar dev">Developer</div>
+                                        <div class="persona-bar tech">Technology Leader</div>
+                                    </div>
+                                    <div class="persona-col">
+                                        <div class="persona-bar dev">Developer</div>
+                                    </div>
+                                    <div class="persona-col">
+                                        <div class="persona-bar tech">Technology Leader</div>
+                                        <div class="persona-bar sec">Security Leader</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════ FEEL ═══════════ -->
+                    <div class="okta-row-wrapper">
+                        <div class="okta-row-label feel-row">Feel</div>
+                        <div class="okta-feel">
+                            <!-- ... existing feel content ... -->
+                            <div class="feel-y-axis">
+                                <span class="feel-y-label positive">+ Positive</span>
+                                <span class="feel-y-title">Emotional Responses</span>
+                                <span class="feel-y-label negative">- Negative</span>
+                            </div>
+                            <div class="feel-data-area">
+                                <!-- SVG Emotional Curve -->
+                                <svg id="feel-curve-svg" class="feel-curve-svg" viewBox="0 0 1200 220"
+                                    preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="rgba(229, 224, 216, 0.35)" /> <!-- Shell -->
+                                            <stop offset="50%" stop-color="rgba(229, 224, 216, 0.05)" /> <!-- Shell -->
+                                            <stop offset="100%" stop-color="rgba(255, 107, 34, 0.25)" /> <!-- Solar -->
+                                        </linearGradient>
+                                        <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                                            <stop offset="0%" stop-color="#E5E0D8" />
+                                            <stop offset="25%" stop-color="#FF6B22" />
+                                            <stop offset="45%" stop-color="#E5E0D8" />
+                                            <stop offset="60%" stop-color="#FF6B22" />
+                                            <stop offset="80%" stop-color="#E5E0D8" />
+                                            <stop offset="100%" stop-color="#E5E0D8" />
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Neutral baseline -->
+                                    <line x1="0" y1="110" x2="1200" y2="110" stroke="rgba(100,116,139,0.15)"
+                                        stroke-width="1" stroke-dasharray="6,4" />
+                                    <!-- Filled area under curve (9 points) -->
+                                    <path
+                                        d="M60,78 C105,78 150,105 195,105 C240,105 285,148 330,148 C375,148 420,205 465,205 C510,205 555,50 600,50 C645,50 690,20 735,20 C780,20 825,205 870,205 C915,205 960,40 1005,40 C1050,40 1095,10 1140,10 L1140,220 L60,220 Z"
+                                        fill="url(#curveGradient)" opacity="0.4" />
+                                    <!-- Main curve line -->
+                                    <path
+                                        d="M60,78 C105,78 150,105 195,105 C240,105 285,148 330,148 C375,148 420,205 465,205 C510,205 555,50 600,50 C645,50 690,20 735,20 C780,20 825,205 870,205 C915,205 960,40 1005,40 C1050,40 1095,10 1140,10"
+                                        fill="none" stroke="url(#lineGradient)" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <!-- 9 Data point dots -->
+                                    <!-- 1: Content (slightly positive) -->
+                                    <circle cx="60" cy="78" r="5" fill="#E5E0D8" stroke="#ffffff" stroke-width="1.5" />
+                                    <!-- 2: Frustrated (negative) -->
+                                    <circle cx="195" cy="105" r="5" fill="#FF6B22" stroke="#cc4a0c"
+                                        stroke-width="1.5" />
+                                    <!-- 3: Motivated/Lost (just below neutral) -->
+                                    <circle cx="330" cy="148" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                        stroke-width="1.5" />
+                                    <!-- 4: Overwhelmed (deepest low) -->
+                                    <circle cx="465" cy="205" r="5" fill="#FF6B22" stroke="#cc4a0c"
+                                        stroke-width="1.5" />
+                                    <!-- 5: Encouraged (positive) -->
+                                    <circle cx="600" cy="50" r="5" fill="#E5E0D8" stroke="#ffffff" stroke-width="1.5" />
+                                    <!-- 6: Excited (peak positive) -->
+                                    <circle cx="735" cy="20" r="5" fill="#E5E0D8" stroke="#ffffff" stroke-width="1.5" />
+                                    <!-- 7: Angry (deep negative) -->
+                                    <circle cx="870" cy="205" r="5" fill="#FF6B22" stroke="#cc4a0c"
+                                        stroke-width="1.5" />
+                                    <!-- 8: At Ease (positive) -->
+                                    <circle cx="1005" cy="40" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                        stroke-width="1.5" />
+                                    <!-- 9: Delighted (highest peak) -->
+                                    <circle cx="1140" cy="10" r="5" fill="#E5E0D8" stroke="#ffffff"
+                                        stroke-width="1.5" />
+                                </svg>
+                                <!-- Labels positioned below the curve -->
+                                <div class="feel-labels">
+                                    <div class="feel-label" style="left: 5%;">
+                                        <span class="feel-emotion positive">Content</span>
+                                        <span class="feel-desc">Content with current solution being out of mind</span>
+                                        <div class="social-tooltip">
+                                            <div class="social-header">
+                                                <div class="social-avatar dev-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">Sarah Chen</span>
+                                                    <span class="social-handle">@sarahchen_dev</span>
+                                                </div>
+                                                <span class="social-time">2h</span>
+                                            </div>
+                                            <div class="social-body">
+                                                Honestly forgot we even had an identity provider until I had to check
+                                                the billing today. The best kind of software is the kind you never have
+                                                to think about. 😌 #devops
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 2</span>
+                                                <span>🔁 1</span>
+                                                <span>❤️ 24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label hover-glow" style="left: 16.25%; cursor: pointer;"
+                                        title="View Pulse Analytics for Frustrated" data-pulse-topic="api">
+                                        <span class="feel-emotion negative">Frustrated</span>
+                                        <span class="feel-desc">Frustrated with solution causing problems</span>
+                                        <div class="social-tooltip">
+                                            <div class="social-header">
+                                                <div class="social-avatar tech-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">Marcus Johnson</span>
+                                                    <span class="social-handle">@marcusj_tech</span>
+                                                </div>
+                                                <span class="social-time">45m</span>
+                                            </div>
+                                            <div class="social-body">
+                                                Why does every new app integration require a custom script and duct
+                                                tape? Our current identity "solution" is becoming a full-time job to
+                                                maintain. There has to be a better way... 😤 #ITProblems
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 12</span>
+                                                <span>🔁 4</span>
+                                                <span>❤️ 89</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label" style="left: 27.5%;">
+                                        <span class="feel-emotion mixed">Lost</span>
+                                        <span class="feel-desc">Motivated but lost not knowing where to start</span>
+                                        <div class="social-tooltip">
+                                            <div class="social-header">
+                                                <div class="social-avatar biz-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">Elena Rodriguez</span>
+                                                    <span class="social-handle">@elena_leads</span>
+                                                </div>
+                                                <span class="social-time">1d</span>
+                                            </div>
+                                            <div class="social-body">
+                                                Got the green light for an IAM overhaul! 🎉 Now looking at the vendor
+                                                landscape and... wow. It's a jungle out there. How do we even begin to
+                                                compare these features apples-to-apples? 🤔
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 5</span>
+                                                <span>🔁 0</span>
+                                                <span>❤️ 18</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label hover-glow" style="left: 38.75%; cursor: pointer;"
+                                        title="View Pulse Analytics for Overwhelmed" data-pulse-topic="dev">
+                                        <span class="feel-emotion negative">Overwhelmed</span>
+                                        <span class="feel-desc">Investigating so many different vendors &amp;
+                                            sites</span>
+                                        <div class="social-tooltip">
+                                            <div class="social-header">
+                                                <div class="social-avatar sec-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">David Kim</span>
+                                                    <span class="social-handle">@dk_secure</span>
+                                                </div>
+                                                <span class="social-time">3h</span>
+                                            </div>
+                                            <div class="social-body">
+                                                I've read 14 whitepapers, sat through 5 demos, and have 3 spreadsheets
+                                                of feature matrices. My brain feels like mush. Every vendor claims they
+                                                can do everything. Finding the actual truth is exhausting. 🫠
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 28</span>
+                                                <span>🔁 15</span>
+                                                <span>❤️ 204</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label" style="left: 50%;">
+                                        <span class="feel-emotion positive">Encouraged</span>
+                                        <span class="feel-desc">Shortlist finalized, closer to a solution</span>
+                                        <div class="social-tooltip">
+                                            <div class="social-header">
+                                                <div class="social-avatar tech-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">Marcus Johnson</span>
+                                                    <span class="social-handle">@marcusj_tech</span>
+                                                </div>
+                                                <span class="social-time">5h</span>
+                                            </div>
+                                            <div class="social-body">
+                                                Finally narrowed it down to two identity vendors! 🎯 Both seem capable
+                                                of handling our edge cases. Really hoping the POC phase proves they're
+                                                as good as the sales pitch. Light at the end of the tunnel... 💡
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 4</span>
+                                                <span>🔁 2</span>
+                                                <span>❤️ 45</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label" style="left: 61.25%;">
+                                        <span class="feel-emotion positive">Excited</span>
+                                        <span class="feel-desc">Excited to test hands-on before buying</span>
+                                        <div class="social-tooltip">
+                                            <div class="social-header">
+                                                <div class="social-avatar dev-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">Sarah Chen</span>
+                                                    <span class="social-handle">@sarahchen_dev</span>
+                                                </div>
+                                                <span class="social-time">10m</span>
+                                            </div>
+                                            <div class="social-body">
+                                                Just got trial access! 🚀 The API documentation is actually readable and
+                                                the SDK works out of the box. Building the test integration right now
+                                                and having way too much fun. Let's build! 💻✨
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 8</span>
+                                                <span>🔁 3</span>
+                                                <span>❤️ 112</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label" style="left: 72.5%;">
+                                        <span class="feel-emotion negative">Angry</span>
+                                        <span class="feel-desc">Roadblocks implementing without hand-holding</span>
+                                        <div class="social-tooltip" data-emotion="angry">
+                                            <div class="social-header">
+                                                <div class="social-avatar dev-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">Sarah Chen</span>
+                                                    <span class="social-handle">@sarahchen_dev</span>
+                                                </div>
+                                                <span class="social-time">2h</span>
+                                            </div>
+                                            <div class="social-body">
+                                                Why is setting up SAML federation treated like forbidden dark magic?! 😤
+                                                Documentation implies it's "3 easy steps", but doesn't mention the 45
+                                                unstated assumptions. Begging for proper self-serve docs right now. We
+                                                shouldn't need a support ticket to map attributes! 📉
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 34</span>
+                                                <span>🔁 22</span>
+                                                <span>❤️ 315</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label" style="left: 83.75%;">
+                                        <span class="feel-emotion positive">At Ease</span>
+                                        <span class="feel-desc">Solution up and running with little maintenance</span>
+                                        <div class="social-tooltip">
+                                            <div class="social-header">
+                                                <div class="social-avatar biz-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">Elena Rodriguez</span>
+                                                    <span class="social-handle">@elena_leads</span>
+                                                </div>
+                                                <span class="social-time">4d</span>
+                                            </div>
+                                            <div class="social-body">
+                                                First week with the new IAM platform fully rolled out. Zero critical
+                                                PagerDuty alerts, SSO is working perfectly, and IT tickets have dropped
+                                                40%. I can finally sleep through the night. ☕️📈
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 1</span>
+                                                <span>🔁 0</span>
+                                                <span>❤️ 56</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feel-label" style="left: 95%;">
+                                        <span class="feel-emotion positive">Delighted</span>
+                                        <span class="feel-desc">Positive ROI and continuing to get more value</span>
+                                        <div class="social-tooltip tooltip-right">
+                                            <div class="social-header">
+                                                <div class="social-avatar sec-avatar"></div>
+                                                <div class="social-user">
+                                                    <span class="social-name">David Kim</span>
+                                                    <span class="social-handle">@dk_secure</span>
+                                                </div>
+                                                <span class="social-time">1w</span>
+                                            </div>
+                                            <div class="social-body">
+                                                Just presented the Q3 security review. Not only have we secured our
+                                                entire perimeter, but the new automated onboarding saved us 200 hours
+                                                this month alone. Best vendor decision we've made all year. 🏆💰
+                                            </div>
+                                            <div class="social-footer">
+                                                <span>💬 14</span>
+                                                <span>🔁 8</span>
+                                                <span>❤️ 188</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════ DOCUMENTATION ═══════════ -->
+                    <div class="okta-row-wrapper">
+                        <div class="okta-row-label doc-label">Documentation</div>
+                        <div class="okta-doc">
+                            <div class="doc-sub-row">
+                                <div class="doc-row-label">Strategy & Assets</div>
+
+                                <!-- PRE-AWARENESS -->
+                                <div class="doc-item">
+                                    <div class="doc-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span class="doc-name">Social Listening Assessment</span>
+                                </div>
+                                <!-- AWARENESS -->
+                                <div class="doc-item">
+                                    <div class="doc-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="22" y1="12" x2="18" y2="12"></line>
+                                            <line x1="6" y1="12" x2="2" y2="12"></line>
+                                            <line x1="12" y1="6" x2="12" y2="2"></line>
+                                            <line x1="12" y1="22" x2="12" y2="18"></line>
+                                        </svg>
+                                    </div>
+                                    <span class="doc-name">ABX Strategy</span>
+                                </div>
+                                <!-- EVALUATION -->
+                                <div class="doc-item">
+                                    <div class="doc-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                                        </svg>
+                                    </div>
+                                    <span class="doc-name">Contact Form Wireframe</span>
+                                </div>
+                                <!-- SELECTION -->
+                                <div class="doc-item">
+                                    <div class="doc-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                            <path d="M2 2l7.5 1.5"></path>
+                                            <path d="M7 11l-1 3"></path>
+                                            <path d="M11 7l3-1"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="doc-name">Download Page Design</span>
+                                </div>
+                                <!-- ADOPTION -->
+                                <div class="doc-item">
+                                    <div class="doc-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span class="doc-name">Sales Enablement Guide</span>
+                                </div>
+                                <!-- RENEWAL -->
+                                <div class="doc-item">
+                                    <div class="doc-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="doc-name">Up-sell Ads Creative Direction</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Journey Navigation — Bottom -->
+        <footer class="journey-footer">
+            <div class="journey-nav">
+                <a href="index.html" class="nav-btn">Journey 1</a>
+                <a href="journey2.html" class="nav-btn active">Main Journey</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ═══════════ BUSINESS LEADER PERSONA POPUP ═══════════ -->
+    <div id="persona-popup-overlay" class="persona-popup-overlay">
+        <div class="persona-popup-card">
+
+            <!-- ── HERO: Photo + Chat side-by-side ── -->
+            <div class="persona-hero">
+
+                <!-- LEFT: Big Photo + Identity -->
+                <div class="persona-hero-identity">
+                    <div class="persona-hero-photo">
+                        <img src="persona-business-leader.png" alt="Business Leader" />
+                    </div>
+                    <span class="persona-popup-eyebrow">Digital Personas</span>
+                    <h2 class="persona-popup-title">Business Leader</h2>
+                    <span class="persona-hero-role">CMO/CDO · CPO · VP of Marketing</span>
+                    <span class="persona-hero-status"><span class="chat-status-dot-inline"></span>Online — ask me
+                        anything</span>
+                </div>
+
+                <!-- RIGHT: AI Chat -->
+                <div class="persona-chat" id="persona-chat">
+                    <div class="persona-chat-messages" id="persona-chat-messages">
+                        <div class="chat-msg persona-msg">
+                            <div class="chat-msg-avatar"><img src="persona-business-leader.png" alt="" /></div>
+                            <div class="chat-msg-bubble">
+                                Hi! I'm a Business Leader — think CMO, CPO, or VP of Marketing. I focus on driving
+                                growth, optimizing customer experience, and scaling the business without compromising
+                                security. Ask me about my priorities, challenges, or how I evaluate solutions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="persona-chat-chips" id="persona-chat-chips">
+                        <button class="chat-chip" data-question="What keeps you up at night?">💭 What keeps you up at
+                            night?</button>
+                        <button class="chat-chip" data-question="How do you evaluate identity vendors?">🔍 How do you
+                            evaluate vendors?</button>
+                        <button class="chat-chip" data-question="What's your role in the purchasing process?">🛒 Your
+                            role in purchasing?</button>
+                        <button class="chat-chip" data-question="What content do you find most valuable?">📊 Most
+                            valuable content?</button>
+                        <button class="chat-chip" data-question="How do you feel during vendor evaluation?">😤 Feelings
+                            during evaluation?</button>
+                    </div>
+
+                    <div class="persona-chat-input">
+                        <input type="text" id="persona-chat-input" placeholder="Ask the Business Leader something..."
+                            autocomplete="off" />
+                        <button class="chat-send-btn" id="persona-chat-send" aria-label="Send">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ── 3-COLUMN LAYOUT ── -->
+            <div class="persona-popup-body">
+
+                <!-- COLUMN 1: Profile Summary -->
+                <div class="persona-popup-col persona-col-profile">
+                    <div class="persona-popup-section">
+                        <h3 class="persona-popup-section-title">Profile Summary</h3>
+                        <div class="persona-popup-subsection">
+                            <h4>Titles</h4>
+                            <p><strong>Customer:</strong> CMO/CDO, CPO, Marketing Director, VP of Marketing, VP of
+                                Product
+                            </p>
+                            <p><strong>Workforce:</strong> CEO, CFO</p>
+                        </div>
+                        <div class="persona-popup-subsection">
+                            <h4>Responsibilities</h4>
+                            <p>Optimize the user experience and conversion, rapid innovation, and business growth
+                                without risking security.</p>
+                        </div>
+                    </div>
+
+                    <div class="persona-popup-section">
+                        <h3 class="persona-popup-section-title">Mindset <span class="persona-popup-subtitle">(Think /
+                                Feel / Do)</span></h3>
+                        <div class="persona-mindset-grid">
+                            <div class="mindset-col">
+                                <div class="mindset-col-header">Think</div>
+                                <ul>
+                                    <li>I need to drive growth</li>
+                                    <li>I need to scale my business easily and securely</li>
+                                    <li>We need to stay ahead of the competition</li>
+                                </ul>
+                            </div>
+                            <div class="mindset-col">
+                                <div class="mindset-col-header">Feel</div>
+                                <ul>
+                                    <li>Concerned about frictionless customer experience and driving growth without
+                                        risking security or violating privacy</li>
+                                    <li>In need of personalization for customer offerings</li>
+                                </ul>
+                            </div>
+                            <div class="mindset-col">
+                                <div class="mindset-col-header">Do</div>
+                                <ul>
+                                    <li>Talk to IT team</li>
+                                    <li>Speak to their network for advice</li>
+                                    <li>Read thought-leadership articles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="persona-popup-section">
+                        <h3 class="persona-popup-section-title">Organization Chart</h3>
+                        <div class="persona-org-chart">
+                            <div class="org-node org-ceo">CEO</div>
+                            <div class="org-level2">
+                                <div class="org-node org-highlight">CFO</div>
+                                <div class="org-node org-highlight">CMO/CDO</div>
+                                <div class="org-node org-highlight">CPO</div>
+                                <div class="org-node">CTO</div>
+                                <div class="org-node">CIO/CISO</div>
+                            </div>
+                            <div class="org-level3">
+                                <div class="org-node org-sub">Dev Team</div>
+                                <div class="org-node org-sub">Security Team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: Purchase Involvement -->
+                <div class="persona-popup-col persona-col-purchase">
+                    <div class="persona-popup-section">
+                        <h3 class="persona-popup-section-title">Purchase Involvement</h3>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Solution Objectives</h4>
+                            <div class="objectives-grid">
+                                <div class="objectives-col">
+                                    <div class="objectives-header wic">Workforce</div>
+                                    <ul>
+                                        <li>Extended workforce access</li>
+                                        <li>Product Adoption</li>
+                                        <li>Secure customer access</li>
+                                        <li>Business &amp; revenue growth</li>
+                                        <li>Workflow automation</li>
+                                    </ul>
+                                </div>
+                                <div class="objectives-col">
+                                    <div class="objectives-header cic">Customer</div>
+                                    <ul>
+                                        <li>Conversion &amp; revenue growth</li>
+                                        <li>Frictionless onboarding</li>
+                                        <li>Customer Engagement</li>
+                                        <li>Omnichannel customer access</li>
+                                        <li>Attack protection</li>
+                                        <li>Multi-factor authentication</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Influence</h4>
+                            <div class="influence-scale">
+                                <div class="influence-row">
+                                    <span class="influence-label">Workforce:</span>
+                                    <div class="influence-bar"><span class="inf-dot" style="left:85%"></span></div>
+                                </div>
+                                <div class="influence-row">
+                                    <span class="influence-label">Customer:</span>
+                                    <div class="influence-bar"><span class="inf-dot" style="left:85%"></span></div>
+                                </div>
+                                <div class="influence-legend">
+                                    <span>Observer</span><span>Influencer</span><span>Decision Maker</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Journey Stage Involvement</h4>
+                            <div class="stage-bars">
+                                <div class="stage-row">
+                                    <span class="stage-label">Workforce</span>
+                                    <div class="stage-pills">
+                                        <span class="stage-pill">Pre-Awareness</span>
+                                        <span class="stage-pill">Awareness</span>
+                                        <span class="stage-pill dim">Evaluation</span>
+                                        <span class="stage-pill">Selection</span>
+                                        <span class="stage-pill dim">Implementation &amp; Adoption</span>
+                                        <span class="stage-pill">Renewal &amp; Expansion</span>
+                                    </div>
+                                </div>
+                                <div class="stage-row">
+                                    <span class="stage-label">Customer</span>
+                                    <div class="stage-pills">
+                                        <span class="stage-pill">Pre-Awareness</span>
+                                        <span class="stage-pill">Awareness</span>
+                                        <span class="stage-pill dim">Evaluation</span>
+                                        <span class="stage-pill dim">Selection</span>
+                                        <span class="stage-pill dim">Implementation &amp; Adoption</span>
+                                        <span class="stage-pill">Renewal &amp; Expansion</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Journey Challenges</h4>
+                            <ul class="challenges-list">
+                                <li>Can't access the right information to learn about solutions</li>
+                                <li>Free trials that don't offer full functionality for their team to test</li>
+                            </ul>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Persona Variations Across Segments</h4>
+                            <div class="segment-cards">
+                                <div class="segment-card">
+                                    <div class="segment-card-header strategic">Strategic &amp; Enterprise</div>
+                                    <p>Decision influencers defining the organization's business needs and goals.
+                                        Interested in technology-driven business value to gain a competitive advantage.
+                                    </p>
+                                </div>
+                                <div class="segment-card">
+                                    <div class="segment-card-header commercial">Commercial</div>
+                                    <p>Decision makers who collaborate closely with IT leaders to ensure digital
+                                        solutions ladder up to outcomes like productivity, cost efficiency, and customer
+                                        satisfaction.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Role in Cross-Selling</h4>
+                            <p>One of the main stakeholders but not the most relevant decision maker when expanding
+                                identity solutions. Will trust the advice of tech and security leaders when assessing
+                                alternatives.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 3: Digital Behavior -->
+                <div class="persona-popup-col persona-col-digital">
+                    <div class="persona-popup-section">
+                        <h3 class="persona-popup-section-title">Digital Behavior</h3>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Content Needs</h4>
+                            <ul>
+                                <li>Analyst reports &amp; market analyses</li>
+                                <li>Business-value of Identity</li>
+                                <li>Product/Solution overview (business-value)</li>
+                                <li>Brand reputation</li>
+                                <li>Industry expertise</li>
+                                <li>Pricing information</li>
+                                <li>Overview of implementation process</li>
+                                <li>Outstanding issues</li>
+                                <li>Industry trends</li>
+                                <li>Future of Identity</li>
+                                <li>Product growth limits</li>
+                                <li>Peer reviews and forums</li>
+                                <li>Industry publications</li>
+                                <li>Case Studies</li>
+                            </ul>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>UX Needs</h4>
+                            <ul>
+                                <li>SEO-friendly vendor comparison</li>
+                                <li>SEO-friendly exec-level explanation of Identity tools</li>
+                                <li>ROI calculator</li>
+                                <li>Customizable solution offerings</li>
+                                <li>Sales rep access</li>
+                                <li>Support team access</li>
+                                <li>Events &amp; webinars</li>
+                                <li>Upgraded product comparison</li>
+                                <li>Upcoming product releases &amp; roadmap (business value)</li>
+                            </ul>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Preferences</h4>
+                            <div class="pref-row">
+                                <span class="pref-label">Preferred Content Format:</span>
+                                <div class="pref-tags">
+                                    <span class="pref-tag">Case Studies</span>
+                                    <span class="pref-tag">Demos</span>
+                                    <span class="pref-tag"
+                                        data-embed="https://docs.google.com/presentation/d/1maydmXzwGa3Py-oEQKtlYL_aHODalnJql2E4aVTqe6U/embed?start=false&loop=false&delayms=5000">Video</span>
+                                    <span class="pref-tag">Podcast</span>
+                                </div>
+                            </div>
+                            <div class="pref-row">
+                                <span class="pref-label">Preferred Channels:</span>
+                                <div class="pref-tags">
+                                    <span class="pref-tag">Web</span>
+                                    <span class="pref-tag">Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="persona-popup-subsection">
+                            <h4>Proposed .COM Touchpoints</h4>
+                            <div class="touchpoints-grid">
+                                <div class="touchpoint-block">
+                                    <div class="touchpoint-header">Main Website</div>
+                                    <div class="touchpoint-tags">
+                                        <span class="tp-tag">Home</span>
+                                        <span class="tp-tag">Products</span>
+                                        <span class="tp-tag">Solutions</span>
+                                        <span class="tp-tag">Pricing</span>
+                                        <span class="tp-tag">Company</span>
+                                        <span class="tp-tag">Support Hub</span>
+                                        <span class="tp-tag">Resources</span>
+                                        <span class="tp-tag">Contact Sales</span>
+                                        <span class="tp-tag">Customer Portal</span>
+                                    </div>
+                                </div>
+                                <div class="touchpoint-block">
+                                    <div class="touchpoint-header">Developer Platform</div>
+                                    <div class="touchpoint-tags">
+                                        <span class="tp-tag">Home</span>
+                                        <span class="tp-tag">Product</span>
+                                        <span class="tp-tag">Solutions</span>
+                                        <span class="tp-tag">Pricing</span>
+                                        <span class="tp-tag">Company &amp; Brand</span>
+                                        <span class="tp-tag">Support Hub</span>
+                                        <span class="tp-tag">Resources</span>
+                                        <span class="tp-tag">Contact Sales</span>
+                                        <span class="tp-tag">Customer Portal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════ AI ASSISTANT WIDGET ═══════════ -->
+    <div class="okta-ai-widget">
+        <button id="okta-ai-toggle" class="okta-ai-toggle" aria-label="Open AI Assistant">
+            <span class="okta-ai-icon">✨</span>
+        </button>
+
+        <div id="okta-ai-panel" class="okta-ai-panel">
+            <div class="okta-ai-header">
+                <div class="okta-ai-title">
+                    <span class="okta-ai-icon-sm">✨</span>
+                    <span>Journey Assistant</span>
+                </div>
+                <button id="okta-ai-close" class="okta-ai-close-btn">&times;</button>
+            </div>
+
+            <div id="okta-ai-messages" class="okta-ai-messages">
+                <div class="okta-ai-msg ai">
+                    <div class="okta-ai-msg-content">
+                        Hello! I'm your Journey AI assistant.<br>
+                        Ask me about any journey stage — from Pre-Awareness to Renewal — or click a suggestion below.
+                    </div>
+                </div>
+                <div class="okta-ai-chips">
+                    <button class="okta-ai-chip" data-query="Tell me about Pre-Awareness">Pre-Awareness</button>
+                    <button class="okta-ai-chip" data-query="What happens in Awareness?">Awareness</button>
+                    <button class="okta-ai-chip" data-query="How does Evaluation work?">Evaluation</button>
+                    <button class="okta-ai-chip" data-query="Explain the Selection phase">Selection</button>
+                    <button class="okta-ai-chip" data-query="What is Adoption?">Adoption</button>
+                    <button class="okta-ai-chip" data-query="Tell me about Renewal">Renewal</button>
+                </div>
+            </div>
+
+            <div class="okta-ai-input-area">
+                <input type="text" id="okta-ai-input" class="okta-ai-input" placeholder="Ask about the journey…"
+                    autocomplete="off">
+                <button id="okta-ai-send" class="okta-ai-send">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ═══════════ OKTA AI ASSISTANT LOGIC ═══════════ */
+        (() => {
+            const toggle = document.getElementById('okta-ai-toggle');
+            const panel = document.getElementById('okta-ai-panel');
+            const closeBtn = document.getElementById('okta-ai-close');
+            const input = document.getElementById('okta-ai-input');
+            const sendBtn = document.getElementById('okta-ai-send');
+            const messages = document.getElementById('okta-ai-messages');
+
+            if (!toggle || !panel) return;
+
+            /* Stage response data */
+            const stageResponses = {
+                'pre-awareness': {
+                    stage: 'Pre-Awareness', colIndex: 0,
+                    html: `<p><strong>Pre-Awareness</strong> is where the buyer journey begins.</p>
+                <ul>
+                    <li><strong>95%</strong> of ENTs already have an existing Identity solution.</li>
+                    <li>The need for a new solution is typically <strong>proactive</strong> (enhancement) or <strong>reactive</strong> (breach/failure).</li>
+                    <li>For <strong>Workforce suites</strong>, 88% are satisfied and will wait for their current solution to break.</li>
+                    <li>For <strong>Customer integration</strong>, developer teams may try building custom authentication first.</li>
+                </ul>
+                <p><em>Strategy:</em> Leverage always-on marketing so our brand is top-of-mind when solutions break.</p>`
+                },
+                'awareness': {
+                    stage: 'Awareness', colIndex: 1,
+                    html: `<p><strong>Awareness</strong> — buyers actively research Identity solutions.</p>
+                <ul>
+                    <li>Teams align on the <strong>need for a solution</strong> and expected business outcomes.</li>
+                    <li>Vendors are found via <strong>peer recommendations</strong>, analyst reports, and online research.</li>
+                    <li>Initial impressions form based on <strong>brand reputation</strong> and industry presence.</li>
+                </ul>
+                <p><em>Strategy:</em> Position as market leader through thought leadership and analyst engagement.</p>`
+                },
+                'evaluation': {
+                    stage: 'Evaluation', colIndex: 2,
+                    html: `<p><strong>Evaluation</strong> — deep-dive into vendor capabilities.</p>
+                <ul>
+                    <li>Business leaders evaluate <strong>ROI and business value</strong>.</li>
+                    <li>Technical teams assess <strong>integration capabilities</strong> and API quality.</li>
+                    <li>Security teams review <strong>compliance certifications</strong>.</li>
+                    <li>Shortlist narrows to <strong>2–3 vendors</strong>.</li>
+                </ul>
+                <p><em>Strategy:</em> Provide transparent evaluation resources and interactive demos.</p>`
+                },
+                'selection': {
+                    stage: 'Selection', colIndex: 3,
+                    html: `<p><strong>Selection</strong> — final decision-making phase.</p>
+                <ul>
+                    <li><strong>Trial downloads</strong> and proof-of-concept implementations drive the decision.</li>
+                    <li>Teams <strong>test & validate</strong> against specific use cases.</li>
+                    <li>Procurement and legal finalize <strong>contracts and pricing</strong>.</li>
+                </ul>
+                <p><em>Strategy:</em> Remove friction from trial-to-purchase with self-service tools.</p>`
+                },
+                'adoption': {
+                    stage: 'Adoption', colIndex: 4,
+                    html: `<p><strong>Adoption</strong> — post-purchase implementation and rollout.</p>
+                <ul>
+                    <li>Implementation teams work with <strong>professional services</strong>.</li>
+                    <li>Organizations measure <strong>time-to-value</strong> and track adoption metrics.</li>
+                    <li><strong>Training and enablement</strong> programs drive internal adoption.</li>
+                </ul>
+                <p><em>Strategy:</em> Accelerate time-to-value with world-class onboarding.</p>`
+                },
+                'renewal': {
+                    stage: 'Renewal', colIndex: 5,
+                    html: `<p><strong>Renewal</strong> — ongoing relationship management.</p>
+                <ul>
+                    <li>Customer success drives <strong>expansion conversations</strong> based on usage data.</li>
+                    <li>Product updates create <strong>up-sell opportunities</strong>.</li>
+                    <li>Annual business reviews assess <strong>ROI realization</strong>.</li>
+                </ul>
+                <p><em>Strategy:</em> Maximize lifetime value through proactive engagement and education.</p>`
+                }
+            };
+
+            let aiHighlightTimeoutId = null;
+
+            /* Highlight a specific journey column */
+            function highlightStage(colIndex) {
+                // Clear any pending timeout when a new highlight (or unhighlight) happens
+                if (aiHighlightTimeoutId) {
+                    clearTimeout(aiHighlightTimeoutId);
+                    aiHighlightTimeoutId = null;
+                }
+
+                const flowchart = document.getElementById('do-flowchart');
+                if (!flowchart) return;
+                /* Clear previous highlights */
+                flowchart.classList.remove('ai-stage-dimmed');
+                flowchart.querySelectorAll('.ai-stage-active').forEach(el => el.classList.remove('ai-stage-active'));
+                if (colIndex == null || colIndex < 0) return;
+                flowchart.classList.add('ai-stage-dimmed');
+                const cols = flowchart.querySelectorAll(':scope > .flow-col');
+                if (cols[colIndex]) cols[colIndex].classList.add('ai-stage-active');
+                /* Also highlight the matching header column */
+                const headerCols = document.querySelectorAll('.do-stage-headers .do-stage-col');
+                headerCols.forEach(h => h.classList.remove('ai-stage-active'));
+                if (headerCols[colIndex]) headerCols[colIndex].classList.add('ai-stage-active');
+
+                // Automatically remove highlight after 4 seconds
+                aiHighlightTimeoutId = setTimeout(() => {
+                    highlightStage(null);
+                }, 4000);
+            }
+
+            /* Keyword matching */
+            function generateResponse(text) {
+                const lower = text.toLowerCase();
+                if (lower.includes('pre-awareness') || lower.includes('pre awareness') || lower.includes('reactive') || lower.includes('proactive'))
+                    return stageResponses['pre-awareness'];
+                if (lower.includes('awareness') && !lower.includes('pre'))
+                    return stageResponses['awareness'];
+                if (lower.includes('evaluation') || lower.includes('evaluat') || lower.includes('compare') || lower.includes('shortlist'))
+                    return stageResponses['evaluation'];
+                if (lower.includes('selection') || lower.includes('select') || lower.includes('trial') || lower.includes('poc'))
+                    return stageResponses['selection'];
+                if (lower.includes('adoption') || lower.includes('adopt') || lower.includes('implement') || lower.includes('onboard'))
+                    return stageResponses['adoption'];
+                if (lower.includes('renewal') || lower.includes('renew') || lower.includes('upsell') || lower.includes('up-sell') || lower.includes('expand'))
+                    return stageResponses['renewal'];
+                if (lower.includes('persona') || lower.includes('business leader') || lower.includes('buyer'))
+                    return { stage: null, colIndex: null, html: `<p>The primary driving personas vary by stage:</p><ul><li><strong>Pre-Awareness → Awareness:</strong> Business Leader & Technology Leader</li><li><strong>Evaluation → Selection:</strong> Technology Leader & Developer</li><li><strong>Adoption → Renewal:</strong> Developer & Technology Leader</li></ul><p>Click on a persona bar to explore their detailed profile.</p>` };
+                if (lower.includes('channel') || lower.includes('touchpoint'))
+                    return { stage: null, colIndex: null, html: `<p>Key channels across the journey:</p><ul><li><strong>Pre-Awareness:</strong> Search engines, existing products, peer communities</li><li><strong>Awareness:</strong> Analyst reports, industry events, peer recommendations</li><li><strong>Evaluation:</strong> Vendor websites, demos, technical docs</li><li><strong>Selection:</strong> Free trials, POC environments, sales team</li><li><strong>Adoption:</strong> Support hub, training, customer success</li><li><strong>Renewal:</strong> Customer portal, account team, product releases</li></ul>` };
+
+                // Dynamic fallback for unrecognized queries
+                // Extract a focus word (longest word over 3 chars, or just default to the whole text if short)
+                const words = text.replace(/[^a-zA-Z0-9 ]/g, '').split(' ');
+                let focusWord = words.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+                if (focusWord.length < 3) focusWord = text;
+
+                // Capitalize focus word
+                focusWord = focusWord.charAt(0).toUpperCase() + focusWord.slice(1).toLowerCase();
+
+                const fallbackTemplates = [
+                    `<p>When considering <strong>${focusWord}</strong> in the context of a digital identity journey, the key is alignment.</p><p>We often see that early in the <em>Awareness</em> phase, managing ${focusWord.toLowerCase()} fragmentation is a primary driver. As organizations mature into <em>Adoption</em> and <em>Renewal</em>, this shifts towards leveraging it for strategic expansion.</p>`,
+
+                    `<p>That's an excellent point. <strong>${focusWord}</strong> plays a fascinating role here.</p><p>In a modern identity architecture, addressing ${focusWord.toLowerCase()} isn't just a technical challenge—it's a critical touchpoint for the <strong>Technology Leader</strong> persona during the <em>Evaluation</em> and <em>Selection</em> stages to ensure long-term ROI.</p>`,
+
+                    `<p>Integrating <strong>${focusWord}</strong> effectively transforms the user experience.</p><p>Whether you're dealing with workforce identity or customer identity, the friction introduced by ${focusWord.toLowerCase()} often necessitates the proactive, top-down approaches we map out in the <em>Pre-Awareness</em> stage.</p>`,
+
+                    `<p>If we look closely at the behavioral pathways, <strong>${focusWord}</strong> is a recurring theme.</p><p>Our data shows that organizations that don't proactively manage ${focusWord.toLowerCase()} often experience a drop in the <em>Feel</em> emotional trajectory—moving from 'Excited' to 'Frustrated' during post-purchase rollout.</p>`
+                ];
+
+                const randomHtml = fallbackTemplates[Math.floor(Math.random() * fallbackTemplates.length)];
+
+                return { stage: null, colIndex: null, html: randomHtml };
+            }
+
+            /* Toggle panel */
+            toggle.addEventListener('click', () => {
+                panel.classList.toggle('active');
+                if (panel.classList.contains('active')) input.focus();
+            });
+            closeBtn.addEventListener('click', () => { panel.classList.remove('active'); highlightStage(null); });
+
+            /* Send message */
+            function handleSend() {
+                const text = input.value.trim();
+                if (!text) return;
+
+                /* User message */
+                const userDiv = document.createElement('div');
+                userDiv.className = 'okta-ai-msg user';
+                userDiv.innerHTML = `<div class="okta-ai-msg-content">${text}</div>`;
+                messages.appendChild(userDiv);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+
+                /* Typing indicator */
+                const typing = document.createElement('div');
+                typing.className = 'okta-ai-typing';
+                typing.innerHTML = '<div class="okta-ai-dot"></div><div class="okta-ai-dot"></div><div class="okta-ai-dot"></div>';
+                messages.appendChild(typing);
+                messages.scrollTop = messages.scrollHeight;
+
+                setTimeout(() => {
+                    typing.remove();
+                    const resp = generateResponse(text);
+                    const aiDiv = document.createElement('div');
+                    aiDiv.className = 'okta-ai-msg ai';
+                    aiDiv.innerHTML = `<div class="okta-ai-msg-content">${resp.html}</div>`;
+                    messages.appendChild(aiDiv);
+                    messages.scrollTop = messages.scrollHeight;
+                    highlightStage(resp.colIndex != null ? resp.colIndex : null);
+                }, 800 + Math.random() * 800);
+            }
+
+            sendBtn.addEventListener('click', handleSend);
+            input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+
+            /* Suggestion chips */
+            document.querySelectorAll('.okta-ai-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    input.value = chip.dataset.query;
+                    handleSend();
+                });
+            });
+        })();
+    </script>
+
+    <!-- ═══════════ NODE HOVER CARD ═══════════ -->
+    <div id="node-hover-card" class="node-hover-card">
+        <div class="nhc-header">
+            <div class="nhc-stage-badge" id="nhc-stage-badge">PRE-AWARENESS</div>
+            <div class="nhc-shimmer"></div>
+        </div>
+        <div class="nhc-body" id="nhc-body"></div>
+    </div>
+
+    <script src="okta-connectors.js?v=5"></script>
+
+    <script>
+        /* ═══════════ NODE HOVER CARD SYSTEM ═══════════ */
+        (() => {
+            const card = document.getElementById('node-hover-card');
+            const badge = document.getElementById('nhc-stage-badge');
+            const body = document.getElementById('nhc-body');
+
+            /* Stage data keyed by column index (0-based) */
+            const stageData = {
+                0: {
+                    name: 'Pre-Awareness',
+                    color: 'var(--col-pre)',
+                    experience: `<p><em>Enterprise buying journeys begin by recognizing new business challenges or problems with current systems.</em></p>
+                <ul>
+                    <li>Most organizations already have an existing solution, and understand their basic requirements.</li>
+                    <li>The need for a new solution is typically either <strong>proactive or reactive</strong>.</li>
+                    <li><strong>Reactive approaches</strong> often follow security or performance failures with current systems.</li>
+                </ul>`,
+                    channels: ['Search engine', 'Existing product', 'Peer-based communities'],
+                    strategy: 'Convince organizations with an existing solution that our platform is the best partner to enhance their capabilities.',
+                    features: [
+                        'Leverage top-of-mind digital marketing campaigns to ensure we are the first choice when a solution is needed.',
+                        'Promote industry events around future technologies and the concept of Better Together.'
+                    ]
+                },
+                1: {
+                    name: 'Awareness',
+                    color: 'var(--col-aware)',
+                    experience: `<p><em>Buyers begin actively researching solutions, comparing capabilities, and building internal alignment.</em></p>
+                <ul>
+                    <li>Teams start aligning on the <strong>need for a solution</strong> and the business outcomes they expect.</li>
+                    <li>Vendors are found through <strong>peer recommendations</strong>, analyst reports, and online research.</li>
+                    <li>Decision makers form initial impressions based on <strong>brand reputation</strong> and industry presence.</li>
+                </ul>`,
+                    channels: ['Analyst reports', 'Industry events', 'Peer recommendations', 'Online search'],
+                    strategy: 'Position our platform as the market leader through thought leadership, analyst engagement, and strong brand presence.',
+                    features: [
+                        'Ensure strong SEO presence for relevant industry search terms.',
+                        'Leverage analyst reports to build credibility.',
+                        'Create compelling comparison content highlighting our solution vs. alternatives.'
+                    ]
+                },
+                2: {
+                    name: 'Evaluation',
+                    color: 'var(--col-eval)',
+                    experience: `<p><em>Buyers deep-dive into vendor capabilities, evaluating business value, technical fit, and total cost of ownership.</em></p>
+                <ul>
+                    <li>Business leaders evaluate <strong>ROI and business value</strong> — revenue impact, cost savings, risk reduction.</li>
+                    <li>Technical teams assess <strong>integration capabilities</strong>, API quality, and developer experience.</li>
+                    <li>Security teams review <strong>compliance certifications</strong> and security architecture.</li>
+                    <li>The shortlist is <strong>narrowed to 2–3 vendors</strong> for detailed comparison.</li>
+                </ul>`,
+                    channels: ['Vendor websites', 'Product demos', 'Technical documentation', 'Sales conversations'],
+                    strategy: "Provide transparent, comprehensive evaluation resources that make it easy for buyers to validate our platform's superiority.",
+                    features: [
+                        'Interactive product demos and sandbox environments.',
+                        'ROI calculators tailored to customer segment and use case.',
+                        'Technical deep-dive webinars and architecture guides.'
+                    ]
+                },
+                3: {
+                    name: 'Selection',
+                    color: 'var(--col-select)',
+                    experience: `<p><em>Final decision-making phase — buyers run trials, validate fit, and secure internal buy-in for the chosen vendor.</em></p>
+                <ul>
+                    <li>Trial downloads and <strong>proof-of-concept</strong> implementations are the primary decision drivers.</li>
+                    <li>Teams <strong>test & validate</strong> against their specific use cases and infrastructure.</li>
+                    <li>Procurement and legal teams finalize <strong>contracts and pricing</strong>.</li>
+                </ul>`,
+                    channels: ['Free trials', 'POC environments', 'Sales team', 'Procurement'],
+                    strategy: 'Remove all friction from the trial-to-purchase journey with self-service tools and responsive sales support.',
+                    features: [
+                        'Streamlined trial sign-up with guided onboarding experience.',
+                        'Self-service POC tools with pre-built integrations.',
+                        'Fast-track procurement with transparent pricing models.'
+                    ]
+                },
+                4: {
+                    name: 'Adoption',
+                    color: 'var(--col-adopt)',
+                    experience: `<p><em>Post-purchase implementation and organizational rollout — the focus shifts to time-to-value and user adoption.</em></p>
+                <ul>
+                    <li>Implementation teams work with <strong>professional services</strong> for initial deployment.</li>
+                    <li>Organizations measure <strong>time-to-value</strong> and track adoption metrics across the business.</li>
+                    <li>Training and enablement programs drive <strong>internal adoption</strong>.</li>
+                </ul>`,
+                    channels: ['Support hub', 'Training platform', 'Customer success', 'Community forums'],
+                    strategy: 'Accelerate time-to-value with world-class onboarding, training, and customer success programs.',
+                    features: [
+                        'Personalized onboarding journeys based on use case and maturity.',
+                        'Self-paced training and certification programs.',
+                        'Proactive customer success engagement with health scoring.'
+                    ]
+                },
+                5: {
+                    name: 'Renewal',
+                    color: 'var(--col-renew)',
+                    experience: `<p><em>Ongoing relationship management — focus on expansion, up-sell, and ensuring continued value realization.</em></p>
+                <ul>
+                    <li>Customer success teams drive <strong>expansion conversations</strong> based on usage data and growth signals.</li>
+                    <li>Product updates and new capabilities create <strong>up-sell opportunities</strong>.</li>
+                    <li>Annual business reviews assess <strong>ROI realization</strong> and future roadmap alignment.</li>
+                </ul>`,
+                    channels: ['Customer portal', 'Account team', 'Product releases', 'Events & webinars'],
+                    strategy: 'Maximize customer lifetime value through proactive engagement, continuous education, and strategic expansion.',
+                    features: [
+                        'Automated product release communications with upgrade guides.',
+                        'Community-driven feature request and roadmap visibility.',
+                        'Executive business review programs with ROI reporting.'
+                    ]
+                }
+            };
+
+            function renderCard(stageIdx) {
+                const data = stageData[stageIdx];
+                if (!data) return;
+
+                badge.textContent = data.name.toUpperCase();
+                badge.style.background = data.color;
+
+                const channelTags = data.channels.map(c => `<span class="nhc-channel-tag">${c}</span>`).join('');
+                const featureItems = data.features.map(f => `<li>${f}</li>`).join('');
+
+                body.innerHTML = `
+                <div class="nhc-section">
+                    <div class="nhc-section-title">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+                        Experience
+                    </div>
+                    <div class="nhc-section-content">${data.experience}</div>
+                </div>
+                <div class="nhc-section">
+                    <div class="nhc-section-title">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/></svg>
+                        Channels
+                    </div>
+                    <div class="nhc-channels">${channelTags}</div>
+                </div>
+                <div class="nhc-section nhc-strategy-section">
+                    <div class="nhc-section-title">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                        Digital Experience Strategy
+                    </div>
+                    <div class="nhc-strategy-quote">${data.strategy}</div>
+                </div>
+                <div class="nhc-section">
+                    <div class="nhc-section-title">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z"/></svg>
+                        Digital Features & Opportunities
+                    </div>
+                    <ul class="nhc-features">${featureItems}</ul>
+                </div>
+            `;
+            }
+
+            /* Map each node to its column index */
+            function getColumnIndex(nodeEl) {
+                const flowchart = document.getElementById('do-flowchart');
+                if (!flowchart) return -1;
+                const cols = flowchart.querySelectorAll(':scope > .flow-col');
+                for (let i = 0; i < cols.length; i++) {
+                    if (cols[i].contains(nodeEl)) return i;
+                }
+                return -1;
+            }
+
+            let hideTimeout;
+            const allNodes = document.querySelectorAll('.journey-node');
+
+            allNodes.forEach(node => {
+                node.addEventListener('mouseenter', (e) => {
+                    clearTimeout(hideTimeout);
+                    const colIdx = getColumnIndex(node);
+                    if (colIdx < 0) return;
+
+                    renderCard(colIdx);
+
+                    /* Position the card near the node */
+                    const rect = node.getBoundingClientRect();
+                    const cardW = 420;
+                    const cardH = card.offsetHeight || 400;
+
+                    let left = rect.right + 16;
+                    let top = rect.top - 20;
+
+                    /* Flip left if it would go off screen */
+                    if (left + cardW > window.innerWidth - 20) {
+                        left = rect.left - cardW - 16;
+                    }
+                    /* Keep within vertical bounds */
+                    if (top + cardH > window.innerHeight - 20) {
+                        top = window.innerHeight - cardH - 20;
+                    }
+                    if (top < 20) top = 20;
+
+                    card.style.left = left + 'px';
+                    card.style.top = top + 'px';
+                    card.classList.add('visible');
+                });
+
+                node.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        card.classList.remove('visible');
+                    }, 200);
+                });
+            });
+
+            card.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('visible');
+            });
+        })();
+    </script>
+
+    <script>
+        /* ═══════════ TOUCHPOINT LINKS — Open in New Tab ═══════════ */
+        (() => {
+            const oktaUrls = {
+                'home': 'https://www.okta.com/',
+                'products': 'https://www.okta.com/products/',
+                'solutions': 'https://www.okta.com/solutions/',
+                'pricing': 'https://www.okta.com/pricing/',
+                'company': 'https://www.okta.com/company/',
+                'support hub': 'https://support.okta.com/',
+                'resources': 'https://www.okta.com/resources/',
+                'contact sales': 'https://www.okta.com/contact-sales/',
+                'customer portal': 'https://www.okta.com/login/'
+            };
+            const auth0Urls = {
+                'home': 'https://auth0.com/',
+                'product': 'https://auth0.com/docs',
+                'solutions': 'https://auth0.com/docs/get-started',
+                'pricing': 'https://auth0.com/pricing',
+                'company & brand': 'https://www.okta.com/company/',
+                'support hub': 'https://support.auth0.com/',
+                'resources': 'https://auth0.com/resources',
+                'contact sales': 'https://auth0.com/contact-us',
+                'customer portal': 'https://manage.auth0.com/'
+            };
+
+            document.querySelectorAll('.touchpoint-block').forEach(block => {
+                const header = block.querySelector('.touchpoint-header');
+                const isAuth0 = header && header.textContent.trim().toLowerCase() === 'developer platform';
+                const urlMap = isAuth0 ? auth0Urls : oktaUrls;
+
+                block.querySelectorAll('.tp-tag').forEach(tag => {
+                    tag.style.cursor = 'pointer';
+                    tag.addEventListener('click', () => {
+                        const key = tag.textContent.trim().toLowerCase();
+                        const url = urlMap[key];
+                        if (url) window.open(url, '_blank');
+                    });
+                });
+            });
+        })();
+    </script>
+
+    <!-- ═══════════ EMBED IFRAME MODAL ═══════════ -->
+    <div id="embed-overlay" class="tp-iframe-overlay">
+        <div class="tp-iframe-card">
+            <div class="tp-iframe-header">
+                <div class="tp-iframe-url" id="embed-url-bar"></div>
+                <button class="tp-iframe-close" id="embed-close" aria-label="Close">&times;</button>
+            </div>
+            <iframe id="embed-iframe" class="tp-iframe" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        /* ═══════════ EMBED IFRAME SYSTEM ═══════════ */
+        (() => {
+            const overlay = document.getElementById('embed-overlay');
+            const iframe = document.getElementById('embed-iframe');
+            const urlBar = document.getElementById('embed-url-bar');
+            const closeBtn = document.getElementById('embed-close');
+
+            function openEmbed(url, label) {
+                urlBar.textContent = label || url;
+                iframe.src = url;
+                overlay.classList.add('visible');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeEmbed() {
+                overlay.classList.remove('visible');
+                document.body.style.overflow = '';
+                setTimeout(() => { iframe.src = ''; }, 400);
+            }
+
+            closeBtn.addEventListener('click', closeEmbed);
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) closeEmbed();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay.classList.contains('visible')) closeEmbed();
+            });
+
+            /* Attach to all elements with data-embed */
+            document.querySelectorAll('[data-embed]').forEach(tag => {
+                tag.style.cursor = 'pointer';
+                tag.addEventListener('click', () => {
+                    openEmbed(tag.dataset.embed, tag.textContent.trim());
+                });
+            });
+        })();
+    </script>
+    <!-- ═══════════ PULSE ANALYTICS POPUP ═══════════ -->
+    <div id="pulse-popup-overlay" class="pulse-popup-overlay">
+        <div class="pulse-popup-card">
+            <!-- Body Grid -->
+            <div class="pulse-popup-body">
+                <!-- Left Column (Matrix + Bar Chart) -->
+                <div class="pulse-col-left">
+                    <div class="pulse-panel" style="flex: 1;">
+                        <div class="pulse-panel-header">
+                            <h3>Moments Passion Index</h3>
+                            <span class="pulse-legend">Bubble size = Volume</span>
+                        </div>
+                        <div id="pulse-passion-matrix" class="pulse-chart-area"></div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column (Live Feed) -->
+                <div class="pulse-col-right">
+                    <div class="pulse-panel feed-panel">
+                        <div class="pulse-panel-header">
+                            <div>
+                                <h3>Live Voices</h3>
+                                <p class="pulse-subtext">Latest moments from across the tech community</p>
+                            </div>
+                            <select class="pulse-sort">
+                                <option>Most Recent</option>
+                                <option>Most Intense</option>
+                            </select>
+                        </div>
+                        <div id="pulse-live-voices" class="pulse-feed-scroll">
+                            <!-- JS injected posts -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="okta-pulse.js"></script>
+</body>
+
+</html>
