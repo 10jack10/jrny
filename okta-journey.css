@@ -63,12 +63,88 @@
     background: rgba(10, 11, 38, 0.35);
     backdrop-filter: blur(24px) saturate(150%);
     -webkit-backdrop-filter: blur(24px) saturate(150%);
-    padding: 8px 0;
+    padding: 8px 0 18px;
+    /* extra bottom padding to give the badges space */
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-/* .okta-col-header-spacer occupied early for label columns */
+/* ═══════════ EMBEDDED TRANSITION BADGES ═══════════ */
+/* Each badge sits inside its col-header div, absolutely positioned
+   at the LEFT edge. translateX(-50%) centres it exactly on the column boundary. */
+.col-transition-badge {
+    position: absolute;
+    bottom: -12px;
+    /* hang below the col-header pill */
+    left: 0;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    z-index: 101;
+    pointer-events: auto;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.ctb-line {
+    display: block;
+    height: 1px;
+    width: 18px;
+    border-radius: 1px;
+    opacity: 0.5;
+    /* color set per tier via parent class */
+    background: currentColor;
+}
+
+.ctb-chevron {
+    width: 7px;
+    height: 9px;
+    flex-shrink: 0;
+    opacity: 0.75;
+}
+
+/* Score bubble */
+.ctb-score {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: rgba(10, 11, 38, 0.85);
+    border: 1px solid currentColor;
+    box-shadow: 0 0 10px -2px currentColor;
+    /* glow matches tier color */
+}
+
+/* Score tiers — color cascades to all children via currentColor */
+.col-transition-badge.ts-high {
+    color: #4ADE80;
+}
+
+.col-transition-badge.ts-medium {
+    color: #FFB347;
+}
+
+.col-transition-badge.ts-low {
+    color: #FF6B6B;
+}
+
+.col-transition-badge:hover .ctb-score {
+    box-shadow: 0 0 16px -2px currentColor;
+    transform: scale(1.08);
+}
+
+.col-transition-badge:hover .ctb-line {
+    width: 22px;
+    opacity: 0.75;
+}
+
 
 .okta-col-header {
     background: rgba(255, 255, 255, 0.02);
@@ -84,7 +160,7 @@
     letter-spacing: 0.06em;
     color: var(--okta-shell);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .okta-col-header::before {
@@ -3392,6 +3468,7 @@
     font-size: 9px;
     font-family: 'Inter', sans-serif;
 }
+
 /* ═══════════ VIEW SWITCHING ═══════════ */
 .view-content {
     display: none;
@@ -3405,8 +3482,15 @@
 }
 
 @keyframes viewFadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ═══════════ EDITOR STYLES ═══════════ */

@@ -199,7 +199,84 @@ body::before {
     align-items: center;
     padding: 1.2rem 0 0.6rem;
     margin-bottom: 0.8rem;
+    position: relative;
 }
+
+/* ═══════════ JOURNEY EFFICACY SCORE BADGE ═══════════ */
+.jes-badge {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: rgba(10, 11, 38, 0.75);
+    border: 1px solid rgba(138, 132, 255, 0.25);
+    border-radius: 14px;
+    padding: 0.5rem 0.9rem 0.5rem 0.6rem;
+    backdrop-filter: blur(16px);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+        0 8px 24px -8px rgba(65, 20, 255, 0.3),
+        0 0 30px -10px rgba(74, 222, 128, 0.15);
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.jes-badge:hover {
+    border-color: rgba(138, 132, 255, 0.45);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+        0 12px 30px -8px rgba(65, 20, 255, 0.4),
+        0 0 40px -10px rgba(74, 222, 128, 0.2);
+    transform: translateY(-50%) scale(1.02);
+}
+
+.jes-ring {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+}
+
+.jes-ring-svg {
+    width: 64px;
+    height: 64px;
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(136, 132, 255, 0.4));
+}
+
+.jes-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jes-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF6B22, #FF9B5E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.jes-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.56rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: rgba(229, 224, 216, 0.6);
+    line-height: 1.35;
+}
+
 
 .okta-logo {
     width: 140px;
