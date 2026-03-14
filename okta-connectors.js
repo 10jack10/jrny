@@ -540,11 +540,43 @@
         });
     }
 
+    /* ── BPI Dashboard Popup – Open / Close ── */
+    function initBpiPopup() {
+        const overlay = document.getElementById('bpi-popup-overlay');
+        const closeBtn = document.getElementById('bpi-popup-close');
+        const jesTrigger = document.getElementById('jes-badge-trigger');
+        const transitionTriggers = document.querySelectorAll('.col-transition-badge');
+        if (!overlay) return;
+
+        function openBpi() {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        if (jesTrigger) jesTrigger.addEventListener('click', openBpi);
+        transitionTriggers.forEach(trigger => trigger.addEventListener('click', openBpi));
+
+        function closeBpi() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeBpi);
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeBpi();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) closeBpi();
+        });
+    }
+
     /* ── Boot ── */
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => setTimeout(() => { init(); initColumnHover(); initPersonaPopup(); initPersonaChat(); }, 200));
+        document.addEventListener('DOMContentLoaded', () => setTimeout(() => { init(); initColumnHover(); initPersonaPopup(); initPersonaChat(); initBpiPopup(); }, 200));
     } else {
-        setTimeout(() => { init(); initColumnHover(); initPersonaPopup(); initPersonaChat(); }, 200);
+        setTimeout(() => { init(); initColumnHover(); initPersonaPopup(); initPersonaChat(); initBpiPopup(); }, 200);
     }
 
 })();

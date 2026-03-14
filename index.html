@@ -45,7 +45,7 @@
                 </div>
 
                 <!-- Journey Efficacy Score Badge -->
-                <div class="jes-badge" title="Journey Efficacy Score — overall health of the buyer journey">
+                <div id="jes-badge-trigger" class="jes-badge" style="cursor:pointer;">
                     <div class="jes-ring">
                         <svg class="jes-ring-svg" viewBox="0 0 80 80">
                             <defs>
@@ -79,8 +79,7 @@
                     <div class="okta-col-header">Pre-Awareness</div>
                     <div class="okta-col-header">
                         Awareness
-                        <div class="col-transition-badge ts-medium"
-                            title="Pre-Awareness \u2192 Awareness transition score">
+                        <div class="col-transition-badge ts-medium">
                             <span class="ctb-line"></span>
                             <svg class="ctb-chevron" viewBox="0 0 8 12">
                                 <polyline points="6,1 1,6 6,11" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -96,7 +95,7 @@
                     </div>
                     <div class="okta-col-header">
                         Evaluation
-                        <div class="col-transition-badge ts-low" title="Awareness \u2192 Evaluation transition score">
+                        <div class="col-transition-badge ts-low">
                             <span class="ctb-line"></span>
                             <svg class="ctb-chevron" viewBox="0 0 8 12">
                                 <polyline points="6,1 1,6 6,11" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -112,7 +111,7 @@
                     </div>
                     <div class="okta-col-header">
                         Selection
-                        <div class="col-transition-badge ts-high" title="Evaluation \u2192 Selection transition score">
+                        <div class="col-transition-badge ts-high">
                             <span class="ctb-line"></span>
                             <svg class="ctb-chevron" viewBox="0 0 8 12">
                                 <polyline points="6,1 1,6 6,11" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -128,7 +127,7 @@
                     </div>
                     <div class="okta-col-header">
                         Adoption
-                        <div class="col-transition-badge ts-medium" title="Selection \u2192 Adoption transition score">
+                        <div class="col-transition-badge ts-medium">
                             <span class="ctb-line"></span>
                             <svg class="ctb-chevron" viewBox="0 0 8 12">
                                 <polyline points="6,1 1,6 6,11" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -144,7 +143,7 @@
                     </div>
                     <div class="okta-col-header">
                         Renewal
-                        <div class="col-transition-badge ts-high" title="Adoption \u2192 Renewal transition score">
+                        <div class="col-transition-badge ts-high">
                             <span class="ctb-line"></span>
                             <svg class="ctb-chevron" viewBox="0 0 8 12">
                                 <polyline points="6,1 1,6 6,11" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -1188,6 +1187,322 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══════════ BUSINESS PERFORMANCE & INTELLIGENCE MODAL ═══════════ -->
+    <div id="bpi-popup-overlay" class="bpi-popup-overlay">
+        <div class="bpi-popup-card">
+
+            <!-- Close Button -->
+            <button id="bpi-popup-close" class="persona-popup-close" aria-label="Close">&times;</button>
+
+            <!-- Header -->
+            <div class="bpi-header">
+                <div class="bpi-header-left">
+                    <span class="bpi-eyebrow">Performance Dashboard</span>
+                    <h2 class="bpi-title">Business Performance &amp; Intelligence</h2>
+                </div>
+                <div class="bpi-header-right">
+                    <div class="bpi-jes-mini">
+                        <svg viewBox="0 0 60 60" width="52" height="52">
+                            <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(138,132,255,0.15)"
+                                stroke-width="4" />
+                            <circle cx="30" cy="30" r="24" fill="none" stroke="var(--okta-solar)" stroke-width="4"
+                                stroke-linecap="round" stroke-dasharray="85.9 150.8" stroke-dashoffset="0"
+                                transform="rotate(-90 30 30)" />
+                        </svg>
+                        <span class="bpi-jes-mini-val">57%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journey Stage KPI Grid -->
+            <div class="bpi-stage-grid">
+
+                <!-- Pre-Awareness -->
+                <div class="bpi-stage-col" style="--stage-color: var(--col-pre);">
+                    <div class="bpi-stage-header">Pre-Awareness</div>
+                    <div class="bpi-kpi-list">
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">2.4M</span>
+                            <span class="bpi-kpi-label">Total Impressions</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">$18.2K</span>
+                            <span class="bpi-kpi-label">Ad Spend</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">$7.58</span>
+                            <span class="bpi-kpi-label">Cost Per Mille</span>
+                        </div>
+                    </div>
+                    <div class="bpi-stage-score">
+                        <div class="bpi-mini-bar">
+                            <div class="bpi-mini-bar-fill" style="width:72%;"></div>
+                        </div>
+                        <span class="bpi-stage-pct">72%</span>
+                    </div>
+                </div>
+
+                <!-- Awareness -->
+                <div class="bpi-stage-col" style="--stage-color: var(--col-aware);">
+                    <div class="bpi-stage-header">Awareness</div>
+                    <div class="bpi-kpi-list">
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">184K</span>
+                            <span class="bpi-kpi-label">Unique Visitors</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">3.2%</span>
+                            <span class="bpi-kpi-label">Click-Through Rate</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">$1.24</span>
+                            <span class="bpi-kpi-label">Cost Per Click</span>
+                        </div>
+                    </div>
+                    <div class="bpi-stage-score">
+                        <div class="bpi-mini-bar">
+                            <div class="bpi-mini-bar-fill" style="width:48%;"></div>
+                        </div>
+                        <span class="bpi-stage-pct">48%</span>
+                    </div>
+                </div>
+
+                <!-- Evaluation -->
+                <div class="bpi-stage-col" style="--stage-color: var(--col-eval);">
+                    <div class="bpi-stage-header">Evaluation</div>
+                    <div class="bpi-kpi-list">
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">1,240</span>
+                            <span class="bpi-kpi-label">Content Downloads</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">312</span>
+                            <span class="bpi-kpi-label">Demo Requests</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">8.4%</span>
+                            <span class="bpi-kpi-label">Lead Conversion Rate</span>
+                        </div>
+                    </div>
+                    <div class="bpi-stage-score">
+                        <div class="bpi-mini-bar">
+                            <div class="bpi-mini-bar-fill" style="width:81%;"></div>
+                        </div>
+                        <span class="bpi-stage-pct">81%</span>
+                    </div>
+                </div>
+
+                <!-- Selection -->
+                <div class="bpi-stage-col" style="--stage-color: var(--col-select);">
+                    <div class="bpi-stage-header">Selection</div>
+                    <div class="bpi-kpi-list">
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">87</span>
+                            <span class="bpi-kpi-label">Sales Qualified Leads</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">34%</span>
+                            <span class="bpi-kpi-label">Win Rate</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">$4,210</span>
+                            <span class="bpi-kpi-label">Cost Per Acquisition</span>
+                        </div>
+                    </div>
+                    <div class="bpi-stage-score">
+                        <div class="bpi-mini-bar">
+                            <div class="bpi-mini-bar-fill" style="width:65%;"></div>
+                        </div>
+                        <span class="bpi-stage-pct">65%</span>
+                    </div>
+                </div>
+
+                <!-- Adoption -->
+                <div class="bpi-stage-col" style="--stage-color: var(--col-adopt);">
+                    <div class="bpi-stage-header">Adoption</div>
+                    <div class="bpi-kpi-list">
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">91%</span>
+                            <span class="bpi-kpi-label">Onboarding Completion</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">3.2d</span>
+                            <span class="bpi-kpi-label">Time to First Value</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">12.4K</span>
+                            <span class="bpi-kpi-label">Active Users</span>
+                        </div>
+                    </div>
+                    <div class="bpi-stage-score">
+                        <div class="bpi-mini-bar">
+                            <div class="bpi-mini-bar-fill" style="width:88%;"></div>
+                        </div>
+                        <span class="bpi-stage-pct">88%</span>
+                    </div>
+                </div>
+
+                <!-- Renewal -->
+                <div class="bpi-stage-col" style="--stage-color: var(--col-renew);">
+                    <div class="bpi-stage-header">Renewal</div>
+                    <div class="bpi-kpi-list">
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">112%</span>
+                            <span class="bpi-kpi-label">Net Retention Rate</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">4.1%</span>
+                            <span class="bpi-kpi-label">Churn Rate</span>
+                        </div>
+                        <div class="bpi-kpi">
+                            <span class="bpi-kpi-value">$340K</span>
+                            <span class="bpi-kpi-label">Expansion Revenue</span>
+                        </div>
+                    </div>
+                    <div class="bpi-stage-score">
+                        <div class="bpi-mini-bar">
+                            <div class="bpi-mini-bar-fill" style="width:88%;"></div>
+                        </div>
+                        <span class="bpi-stage-pct">88%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Conversion Funnel -->
+            <div class="bpi-funnel-section">
+                <h3 class="bpi-section-title">Conversion Funnel</h3>
+                <div class="bpi-funnel">
+                    <div class="bpi-funnel-stage">
+                        <div class="bpi-funnel-bar" style="--bar-width: 100%; --stage-color: var(--col-pre);">
+                            <span class="bpi-funnel-val">2.4M</span>
+                        </div>
+                        <span class="bpi-funnel-label">Impressions</span>
+                    </div>
+                    <div class="bpi-funnel-arrow">
+                        <span class="bpi-funnel-rate">7.7%</span>
+                        <svg width="16" height="12" viewBox="0 0 16 12">
+                            <polyline points="1,1 8,6 1,11" fill="none" stroke="rgba(138,132,255,0.4)"
+                                stroke-width="1.5" />
+                            <polyline points="8,1 15,6 8,11" fill="none" stroke="rgba(138,132,255,0.25)"
+                                stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div class="bpi-funnel-stage">
+                        <div class="bpi-funnel-bar" style="--bar-width: 62%; --stage-color: var(--col-aware);">
+                            <span class="bpi-funnel-val">184K</span>
+                        </div>
+                        <span class="bpi-funnel-label">Visitors</span>
+                    </div>
+                    <div class="bpi-funnel-arrow">
+                        <span class="bpi-funnel-rate">0.7%</span>
+                        <svg width="16" height="12" viewBox="0 0 16 12">
+                            <polyline points="1,1 8,6 1,11" fill="none" stroke="rgba(138,132,255,0.4)"
+                                stroke-width="1.5" />
+                            <polyline points="8,1 15,6 8,11" fill="none" stroke="rgba(138,132,255,0.25)"
+                                stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div class="bpi-funnel-stage">
+                        <div class="bpi-funnel-bar" style="--bar-width: 38%; --stage-color: var(--col-eval);">
+                            <span class="bpi-funnel-val">1,240</span>
+                        </div>
+                        <span class="bpi-funnel-label">Leads</span>
+                    </div>
+                    <div class="bpi-funnel-arrow">
+                        <span class="bpi-funnel-rate">25.2%</span>
+                        <svg width="16" height="12" viewBox="0 0 16 12">
+                            <polyline points="1,1 8,6 1,11" fill="none" stroke="rgba(138,132,255,0.4)"
+                                stroke-width="1.5" />
+                            <polyline points="8,1 15,6 8,11" fill="none" stroke="rgba(138,132,255,0.25)"
+                                stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div class="bpi-funnel-stage">
+                        <div class="bpi-funnel-bar" style="--bar-width: 22%; --stage-color: var(--col-select);">
+                            <span class="bpi-funnel-val">312</span>
+                        </div>
+                        <span class="bpi-funnel-label">Opportunities</span>
+                    </div>
+                    <div class="bpi-funnel-arrow">
+                        <span class="bpi-funnel-rate">27.9%</span>
+                        <svg width="16" height="12" viewBox="0 0 16 12">
+                            <polyline points="1,1 8,6 1,11" fill="none" stroke="rgba(138,132,255,0.4)"
+                                stroke-width="1.5" />
+                            <polyline points="8,1 15,6 8,11" fill="none" stroke="rgba(138,132,255,0.25)"
+                                stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div class="bpi-funnel-stage">
+                        <div class="bpi-funnel-bar" style="--bar-width: 14%; --stage-color: var(--col-adopt);">
+                            <span class="bpi-funnel-val">87</span>
+                        </div>
+                        <span class="bpi-funnel-label">Customers</span>
+                    </div>
+                    <div class="bpi-funnel-arrow">
+                        <span class="bpi-funnel-rate good">96.6%</span>
+                        <svg width="16" height="12" viewBox="0 0 16 12">
+                            <polyline points="1,1 8,6 1,11" fill="none" stroke="rgba(74,222,128,0.4)"
+                                stroke-width="1.5" />
+                            <polyline points="8,1 15,6 8,11" fill="none" stroke="rgba(74,222,128,0.25)"
+                                stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div class="bpi-funnel-stage">
+                        <div class="bpi-funnel-bar" style="--bar-width: 11%; --stage-color: var(--col-renew);">
+                            <span class="bpi-funnel-val">84</span>
+                        </div>
+                        <span class="bpi-funnel-label">Retained</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="bpi-insights-section">
+                <h3 class="bpi-section-title">Key Insights</h3>
+                <div class="bpi-insights-grid">
+                    <div class="bpi-insight bpi-insight-warn">
+                        <div class="bpi-insight-icon">⚠️</div>
+                        <div class="bpi-insight-body">
+                            <div class="bpi-insight-title">Awareness → Evaluation Drop-off</div>
+                            <p class="bpi-insight-desc">Only 0.7% of visitors convert to leads. Content strategy and
+                                landing page optimization could lift this by 30–50%.</p>
+                        </div>
+                        <span class="bpi-insight-tag bpi-tag-critical">Critical</span>
+                    </div>
+                    <div class="bpi-insight bpi-insight-ok">
+                        <div class="bpi-insight-icon">🚀</div>
+                        <div class="bpi-insight-body">
+                            <div class="bpi-insight-title">Strong Retention Signal</div>
+                            <p class="bpi-insight-desc">96.6% adoption-to-renewal rate and 112% NRR indicate excellent
+                                product-market fit. Expansion revenue is trending up 18% QoQ.</p>
+                        </div>
+                        <span class="bpi-insight-tag bpi-tag-positive">Positive</span>
+                    </div>
+                    <div class="bpi-insight bpi-insight-info">
+                        <div class="bpi-insight-icon">📊</div>
+                        <div class="bpi-insight-body">
+                            <div class="bpi-insight-title">Selection Bottleneck</div>
+                            <p class="bpi-insight-desc">34% win rate with $4,210 CPA suggests competitive pressure
+                                during vendor selection. Trial experience and sales enablement are key levers.</p>
+                        </div>
+                        <span class="bpi-insight-tag bpi-tag-monitor">Monitor</span>
+                    </div>
+                    <div class="bpi-insight bpi-insight-ok">
+                        <div class="bpi-insight-icon">⏱️</div>
+                        <div class="bpi-insight-body">
+                            <div class="bpi-insight-title">Fast Time to Value</div>
+                            <p class="bpi-insight-desc">3.2 day average onboarding with 91% completion — top quartile
+                                for B2B SaaS. This is a strong competitive differentiator.</p>
+                        </div>
+                        <span class="bpi-insight-tag bpi-tag-positive">Positive</span>
                     </div>
                 </div>
             </div>
